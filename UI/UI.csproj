@@ -49,14 +49,6 @@
   <ItemGroup>
     <Compile Include="Atualizar.cs" />
     <Compile Include="Classes\Conexao.cs" />
-    <Compile Include="Funcoes\Cadastrar.cs" />
-    <Compile Include="Funcoes\Ferramentas.cs" />
-    <Compile Include="frmCadAluno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCadAluno.Designer.cs">
-      <DependentUpon>frmCadAluno.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCadAtividade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +60,20 @@
     </Compile>
     <Compile Include="frmCadCertificado.Designer.cs">
       <DependentUpon>frmCadCertificado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funcoes\Cadastrar.cs" />
+    <Compile Include="Funcoes\Ferramentas.cs" />
+    <Compile Include="frmCadAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadAluno.Designer.cs">
+      <DependentUpon>frmCadAluno.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEditarAluno.cs">
       <SubType>Form</SubType>
@@ -131,6 +137,9 @@
     <EmbeddedResource Include="frmEditarCertificado.resx">
       <DependentUpon>frmEditarCertificado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRelCargaHorariaAluno.resx">
       <DependentUpon>frmRelCargaHorariaAluno.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +173,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Icones\anxiety.png" />
+    <Content Include="Icones\binoculars 2.png" />
+    <Content Include="Icones\binoculars.png" />
+    <Content Include="Icones\chart.png" />
+    <Content Include="Icones\chart_iPF_icon.ico" />
+    <Content Include="Icones\delete.png" />
+    <Content Include="Icones\door.png" />
+    <Content Include="Icones\floppy-disk.png" />
+    <Content Include="Icones\goal.png" />
+    <Content Include="Icones\magnifying-glass.png" />
+    <Content Include="Icones\pdf %282%29.png" />
+    <Content Include="Icones\pdf.png" />
+    <Content Include="Icones\register.png" />
+    <Content Include="Icones\register_GZQ_icon.ico" />
+    <Content Include="Icones\success.png" />
+    <Content Include="Icones\test.png" />
+    <Content Include="Icones\test_X8X_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

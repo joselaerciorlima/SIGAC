@@ -1,11 +1,6 @@
 ﻿using Classes;
-using Funcoes;
 using System;
-using System.Collections.Generic;
 using System.Data.OleDb;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Funcoes
@@ -54,21 +49,67 @@ namespace Funcoes
       /// <param name="descricao"></param>
       /// <param name="cargaHoraria"></param>
       /// <param name="grupo"></param>
-      public Cadastrar(string descricao, int cargaHoraria, int grupo)
+      public Cadastrar(string descricao, string cargaHoraria, int grupo)
       {
+         var cmd = new OleDbCommand("INSERT INTO tblAtividades (codGrupo,descricaoAtividade,cargaHorariaAtividade) VALUES (@codGrupo,@descricao,@cargaHoraria)");
 
+         cmd.Parameters.AddWithValue("@codGrupo", grupo);
+         cmd.Parameters.AddWithValue("@descricao", descricao);
+         cmd.Parameters.AddWithValue("@cargaHoraria", cargaHoraria);
+         
+         cmd.Connection = Conexao.connection;
+         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         Conexao.Conectar();
+
+         try
+         {
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Cadastro realizado com sucesso!");
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
       }
       /// <summary>
       /// Construtor para cadastrar certificado.
       /// </summary>
-      /// <param name="matricula"></param>
       /// <param name="atividade"></param>
+      /// <param name="matricula"></param>
       /// <param name="descricao"></param>
       /// <param name="dataCertificado"></param>
       /// <param name="cargaHoraria"></param>
-      public Cadastrar(int matricula, int atividade, string descricao, string dataCertificado, int cargaHoraria)
+      public Cadastrar(int atividade, string matricula, string descricao, string dataCertificado, string cargaHoraria)
       {
+         var cmd = new OleDbCommand("INSERT INTO tblCertificados (codAtividade,matricula,descricaoCertificado, dataCertificado,cargaHorariaCertificado) VALUES (@codAtividade,@matricula,@descricaoCertificado,@dataCertificado,@cargaHorariaCertificado)");
 
+         cmd.Parameters.AddWithValue("@codAtividade", atividade);
+         cmd.Parameters.AddWithValue("@matricula", matricula);
+         cmd.Parameters.AddWithValue("@descricaoCertificado", descricao);
+         cmd.Parameters.AddWithValue("@dataCertificado", dataCertificado);
+         cmd.Parameters.AddWithValue("@cargaHorariaCertificado", cargaHoraria);
+
+         cmd.Connection = Conexao.connection;
+         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         Conexao.Conectar();
+
+         try
+         {
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Cadastro realizado com sucesso!");
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
       }
 
    }

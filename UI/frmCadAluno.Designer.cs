@@ -177,8 +177,11 @@
          this.Controls.Add(this.txbMatricula);
          this.Controls.Add(this.btnSalvar);
          this.Controls.Add(this.btnSair);
+         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+         this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
          this.Name = "frmCadAluno";
-         this.Text = "Form1";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+         this.Text = "Cadastro - Aluno";
          this.Load += new System.EventHandler(this.frmCadAluno_Load);
          this.ResumeLayout(false);
          this.PerformLayout();

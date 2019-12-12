@@ -1,6 +1,8 @@
 ﻿using Classes;
+using System;
 using System.Data;
 using System.Data.OleDb;
+using System.Windows.Forms;
 
 namespace Funcoes
 {
@@ -21,21 +23,33 @@ namespace Funcoes
          //Chama o método de conexão que está dentro da classe 'Conexao'.
          Conexao.Conectar();
 
-         var reader = cmd.ExecuteReader();
+         int codigo = 0;
 
-         reader.Read();
-         //Armazena o valor encontrado pelo cmd dentro da variavel.
-         var codigo = (int)reader["codCurso"];
+         try
+         {
+            var reader = cmd.ExecuteReader();
 
-         Conexao.Desconectar();
-         //Retorna o valor encontrado.
+            reader.Read();
+            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            codigo = (int)reader["codCurso"];
+            //Retorna o valor encontrado.
+
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
          return codigo;
       }
 
       /// <summary>
       /// Método publico que faz a busca no banco de dados e retorna o código do valor selecionado na combobox.
       /// </summary>
-      /// <param name="curso"></param>
+      /// <param name="anoTurma"></param>
       /// <returns></returns>
       public static int BuscaCodigoTurma(string anoTurma)
       {
@@ -47,16 +61,67 @@ namespace Funcoes
          //Chama o método de conexão que está dentro da classe 'Conexao'.
          Conexao.Conectar();
 
-         var reader = cmd.ExecuteReader();
+         int codigo = 0;
 
-         reader.Read();
-         //Armazena o valor encontrado pelo cmd dentro da variavel.
-         var codigo = (int)reader["codTurma"];
+         try
+         {
+            var reader = cmd.ExecuteReader();
 
-         Conexao.Desconectar();
-         //Retorna o valor encontrado.
+            reader.Read();
+            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            codigo = (int)reader["codTurma"];
+            //Retorna o valor encontrado.
+
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
          return codigo;
       }
+
+      /// <summary>
+      /// Método publico que faz a busca no banco de dados e retorna o código do valor selecionado na combobox.
+      /// </summary>
+      /// <param name="grupo"></param>
+      /// <returns></returns>
+      public static int BuscaCodigoGrupo(string grupo)
+      {
+         var cmd = new OleDbCommand("SELECT * FROM tblGrupos WHERE descricaoGrupo = @grupo");
+
+         cmd.Parameters.AddWithValue("@grupo", grupo);
+
+         cmd.Connection = Conexao.connection;
+         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         Conexao.Conectar();
+
+         int codigo=0;
+
+         try
+         {
+            var reader = cmd.ExecuteReader();
+
+            reader.Read();
+            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            codigo = (int)reader["codGrupo"];
+            //Retorna o valor encontrado.
+            
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
+         return codigo;
+      }
+
       /// <summary>
       /// Método que recupera os dados da tabela no banco de dados e armazena em um DataTable.
       /// </summary>
@@ -100,7 +165,28 @@ namespace Funcoes
          Conexao.Desconectar();
 
          return dt;
+      }
+      /// <summary>
+      /// Método que recupera os dados da tabela no banco de dados e armazena em um DataTable.
+      /// </summary>
+      /// <returns></returns>
+      public static DataTable PreencheComboBoxGrupo()
+      {
+         var cmd = new OleDbCommand("SELECT * FROM tblGrupos");
 
+         cmd.Connection = Conexao.connection;
+
+         Conexao.Conectar();
+
+         var reader = cmd.ExecuteReader();
+
+         DataTable dt = new DataTable();
+
+         dt.Load(reader);
+
+         Conexao.Desconectar();
+
+         return dt;
       }
    }
 }

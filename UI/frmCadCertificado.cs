@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SIGAC_Sistema_Gestao_Atividades_Complementares
+namespace UI
 {
    public partial class frmCadCertificado : Form
    {
@@ -16,6 +16,5 @@ namespace SIGAC_Sistema_Gestao_Atividades_Complementares
       {
          InitializeComponent();
       }
-      
    }
 }
