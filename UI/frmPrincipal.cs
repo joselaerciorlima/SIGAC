@@ -32,5 +32,11 @@ namespace UI
          var form = new frmCadCurso();
          form.ShowDialog();
       }
+
+        private void certificadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+         var form = new frmCadCertificado();
+         form.ShowDialog();
+      }
     }
 }

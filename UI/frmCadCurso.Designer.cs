@@ -127,7 +127,10 @@
          this.Controls.Add(this.txbDescricao);
          this.Controls.Add(this.btnSalvar);
          this.Controls.Add(this.btnSair);
+         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+         this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
          this.Name = "frmCadCurso";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "Cadastro - Curso";
          this.Load += new System.EventHandler(this.frmCadCurso_Load);
          this.ResumeLayout(false);

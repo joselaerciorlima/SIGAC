@@ -117,6 +117,7 @@
          // 
          // txbNome
          // 
+         this.txbNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
          this.txbNome.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.txbNome.Location = new System.Drawing.Point(271, 143);
          this.txbNome.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);

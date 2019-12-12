@@ -33,13 +33,13 @@
          this.alunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.atividadeComplementarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.certificadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.cursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
          this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
          this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.cursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.menuStrip1.SuspendLayout();
          this.SuspendLayout();
          // 
@@ -90,6 +90,14 @@
          this.certificadoToolStripMenuItem.Name = "certificadoToolStripMenuItem";
          this.certificadoToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
          this.certificadoToolStripMenuItem.Text = "Certificado";
+         this.certificadoToolStripMenuItem.Click += new System.EventHandler(this.certificadoToolStripMenuItem_Click);
+         // 
+         // cursoToolStripMenuItem
+         // 
+         this.cursoToolStripMenuItem.Name = "cursoToolStripMenuItem";
+         this.cursoToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
+         this.cursoToolStripMenuItem.Text = "Curso";
+         this.cursoToolStripMenuItem.Click += new System.EventHandler(this.cursoToolStripMenuItem_Click);
          // 
          // toolStripSeparator1
          // 
@@ -125,13 +133,6 @@
          this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
          this.sobreToolStripMenuItem.Size = new System.Drawing.Size(58, 23);
          this.sobreToolStripMenuItem.Text = "Sobre";
-         // 
-         // cursoToolStripMenuItem
-         // 
-         this.cursoToolStripMenuItem.Name = "cursoToolStripMenuItem";
-         this.cursoToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
-         this.cursoToolStripMenuItem.Text = "Curso";
-         this.cursoToolStripMenuItem.Click += new System.EventHandler(this.cursoToolStripMenuItem_Click);
          // 
          // frmPrincipal
          // 

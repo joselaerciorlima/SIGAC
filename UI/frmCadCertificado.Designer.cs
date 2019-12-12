@@ -38,12 +38,12 @@
          this.cobClassificacao = new System.Windows.Forms.ComboBox();
          this.prbAluno = new System.Windows.Forms.ProgressBar();
          this.txbCargaHoraria = new System.Windows.Forms.TextBox();
-         this.txbData = new System.Windows.Forms.TextBox();
          this.txbAluno = new System.Windows.Forms.TextBox();
          this.txbDescricao = new System.Windows.Forms.TextBox();
-         this.txbMatricula = new System.Windows.Forms.TextBox();
          this.btnSalvar = new System.Windows.Forms.Button();
          this.btnSair = new System.Windows.Forms.Button();
+         this.txbData = new System.Windows.Forms.MaskedTextBox();
+         this.txbMatricula = new System.Windows.Forms.MaskedTextBox();
          this.SuspendLayout();
          // 
          // label2
@@ -139,15 +139,6 @@
          this.txbCargaHoraria.Size = new System.Drawing.Size(80, 25);
          this.txbCargaHoraria.TabIndex = 19;
          // 
-         // txbData
-         // 
-         this.txbData.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txbData.Location = new System.Drawing.Point(604, 100);
-         this.txbData.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
-         this.txbData.Name = "txbData";
-         this.txbData.Size = new System.Drawing.Size(80, 25);
-         this.txbData.TabIndex = 16;
-         // 
          // txbAluno
          // 
          this.txbAluno.Enabled = false;
@@ -167,15 +158,6 @@
          this.txbDescricao.Size = new System.Drawing.Size(566, 25);
          this.txbDescricao.TabIndex = 17;
          // 
-         // txbMatricula
-         // 
-         this.txbMatricula.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txbMatricula.Location = new System.Drawing.Point(118, 100);
-         this.txbMatricula.Margin = new System.Windows.Forms.Padding(15, 3, 4, 5);
-         this.txbMatricula.Name = "txbMatricula";
-         this.txbMatricula.Size = new System.Drawing.Size(102, 25);
-         this.txbMatricula.TabIndex = 14;
-         // 
          // btnSalvar
          // 
          this.btnSalvar.AutoSize = true;
@@ -188,6 +170,7 @@
          this.btnSalvar.TabIndex = 20;
          this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
          this.btnSalvar.UseVisualStyleBackColor = true;
+         this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
          // 
          // btnSair
          // 
@@ -201,12 +184,35 @@
          this.btnSair.TabIndex = 22;
          this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
          this.btnSair.UseVisualStyleBackColor = true;
+         this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+         // 
+         // txbData
+         // 
+         this.txbData.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.txbData.Location = new System.Drawing.Point(604, 100);
+         this.txbData.Mask = "00/00/0000";
+         this.txbData.Name = "txbData";
+         this.txbData.Size = new System.Drawing.Size(80, 25);
+         this.txbData.TabIndex = 29;
+         this.txbData.ValidatingType = typeof(System.DateTime);
+         // 
+         // txbMatricula
+         // 
+         this.txbMatricula.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.txbMatricula.Location = new System.Drawing.Point(118, 100);
+         this.txbMatricula.Mask = "0000000000";
+         this.txbMatricula.Name = "txbMatricula";
+         this.txbMatricula.Size = new System.Drawing.Size(102, 25);
+         this.txbMatricula.TabIndex = 30;
+         this.txbMatricula.ValidatingType = typeof(int);
          // 
          // frmCadCertificado
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(800, 450);
+         this.Controls.Add(this.txbMatricula);
+         this.Controls.Add(this.txbData);
          this.Controls.Add(this.label2);
          this.Controls.Add(this.label3);
          this.Controls.Add(this.label6);
@@ -216,14 +222,16 @@
          this.Controls.Add(this.cobClassificacao);
          this.Controls.Add(this.prbAluno);
          this.Controls.Add(this.txbCargaHoraria);
-         this.Controls.Add(this.txbData);
          this.Controls.Add(this.txbAluno);
          this.Controls.Add(this.txbDescricao);
-         this.Controls.Add(this.txbMatricula);
          this.Controls.Add(this.btnSalvar);
          this.Controls.Add(this.btnSair);
+         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+         this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
          this.Name = "frmCadCertificado";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "frmCadCertificado";
+         this.Load += new System.EventHandler(this.frmCadCertificado_Load);
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -240,11 +248,11 @@
         private System.Windows.Forms.ComboBox cobClassificacao;
         private System.Windows.Forms.ProgressBar prbAluno;
         private System.Windows.Forms.TextBox txbCargaHoraria;
-        private System.Windows.Forms.TextBox txbData;
         private System.Windows.Forms.TextBox txbAluno;
         private System.Windows.Forms.TextBox txbDescricao;
-        private System.Windows.Forms.TextBox txbMatricula;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.MaskedTextBox txbData;
+        private System.Windows.Forms.MaskedTextBox txbMatricula;
     }
 }

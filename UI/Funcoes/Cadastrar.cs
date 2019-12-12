@@ -83,14 +83,14 @@ namespace Funcoes
       /// <param name="descricao"></param>
       /// <param name="dataCertificado"></param>
       /// <param name="cargaHoraria"></param>
-      public Cadastrar(int atividade, string matricula, string descricao, string dataCertificado, string cargaHoraria)
+      public Cadastrar(string matricula, string dataCertificado, string descricao, int atividade, string cargaHoraria)
       {
-         var cmd = new OleDbCommand("INSERT INTO tblCertificados (codAtividade,matricula,descricaoCertificado, dataCertificado,cargaHorariaCertificado) VALUES (@codAtividade,@matricula,@descricaoCertificado,@dataCertificado,@cargaHorariaCertificado)");
+         var cmd = new OleDbCommand("INSERT INTO tblCertificados (matricula,dataCertificado,descricaoCertificado,codAtividade,cargaHorariaCertificado) VALUES (@matricula,@dataCertificado,@descricaoCertificado,@codAtividade,@cargaHorariaCertificado)");
 
-         cmd.Parameters.AddWithValue("@codAtividade", atividade);
          cmd.Parameters.AddWithValue("@matricula", matricula);
-         cmd.Parameters.AddWithValue("@descricaoCertificado", descricao);
          cmd.Parameters.AddWithValue("@dataCertificado", dataCertificado);
+         cmd.Parameters.AddWithValue("@descricaoCertificado", descricao);
+         cmd.Parameters.AddWithValue("@codAtividade", atividade);
          cmd.Parameters.AddWithValue("@cargaHorariaCertificado", cargaHoraria);
 
          cmd.Connection = Conexao.connection;
