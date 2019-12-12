@@ -56,7 +56,7 @@ namespace Funcoes
          cmd.Parameters.AddWithValue("@codGrupo", grupo);
          cmd.Parameters.AddWithValue("@descricao", descricao);
          cmd.Parameters.AddWithValue("@cargaHoraria", cargaHoraria);
-         
+
          cmd.Connection = Conexao.connection;
          //Chama o método de conexão que está dentro da classe 'Conexao'.
          Conexao.Conectar();
@@ -92,6 +92,36 @@ namespace Funcoes
          cmd.Parameters.AddWithValue("@descricaoCertificado", descricao);
          cmd.Parameters.AddWithValue("@dataCertificado", dataCertificado);
          cmd.Parameters.AddWithValue("@cargaHorariaCertificado", cargaHoraria);
+
+         cmd.Connection = Conexao.connection;
+         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         Conexao.Conectar();
+
+         try
+         {
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Cadastro realizado com sucesso!");
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
+      }
+      /// <summary>
+      /// Construtor para cadastrar curso.
+      /// </summary>
+      /// <param name="descricao"></param>
+      /// <param name="periodo"></param>
+      public Cadastrar(string descricao, int periodo)
+      {
+         var cmd = new OleDbCommand("INSERT INTO tblCursos (descricaoCurso,codPeriodo) VALUES (@descricao,@periodo)");
+
+         cmd.Parameters.AddWithValue("@descricao", descricao);
+         cmd.Parameters.AddWithValue("@periodo", periodo);
 
          cmd.Connection = Conexao.connection;
          //Chama o método de conexão que está dentro da classe 'Conexao'.

@@ -17,3 +17,4 @@ C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementa
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\bin\Debug\UI.pdb
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmCadCertificado.resources
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmPrincipal.resources
+C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmCadCurso.resources

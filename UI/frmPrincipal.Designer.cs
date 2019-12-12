@@ -35,10 +35,11 @@
          this.certificadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
          this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
          this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.cursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.menuStrip1.SuspendLayout();
          this.SuspendLayout();
          // 
@@ -61,6 +62,7 @@
             this.alunoToolStripMenuItem,
             this.atividadeComplementarToolStripMenuItem,
             this.certificadoToolStripMenuItem,
+            this.cursoToolStripMenuItem,
             this.toolStripSeparator1,
             this.usuárioToolStripMenuItem,
             this.toolStripSeparator2,
@@ -100,6 +102,18 @@
          this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
          this.usuárioToolStripMenuItem.Text = "Usuário";
          // 
+         // toolStripSeparator2
+         // 
+         this.toolStripSeparator2.Name = "toolStripSeparator2";
+         this.toolStripSeparator2.Size = new System.Drawing.Size(226, 6);
+         // 
+         // sairToolStripMenuItem
+         // 
+         this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+         this.sairToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
+         this.sairToolStripMenuItem.Text = "Sair";
+         this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+         // 
          // relatórioToolStripMenuItem
          // 
          this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
@@ -112,17 +126,12 @@
          this.sobreToolStripMenuItem.Size = new System.Drawing.Size(58, 23);
          this.sobreToolStripMenuItem.Text = "Sobre";
          // 
-         // toolStripSeparator2
+         // cursoToolStripMenuItem
          // 
-         this.toolStripSeparator2.Name = "toolStripSeparator2";
-         this.toolStripSeparator2.Size = new System.Drawing.Size(226, 6);
-         // 
-         // sairToolStripMenuItem
-         // 
-         this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-         this.sairToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
-         this.sairToolStripMenuItem.Text = "Sair";
-         this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+         this.cursoToolStripMenuItem.Name = "cursoToolStripMenuItem";
+         this.cursoToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
+         this.cursoToolStripMenuItem.Text = "Curso";
+         this.cursoToolStripMenuItem.Click += new System.EventHandler(this.cursoToolStripMenuItem_Click);
          // 
          // frmPrincipal
          // 
@@ -155,5 +164,6 @@
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cursoToolStripMenuItem;
     }
 }

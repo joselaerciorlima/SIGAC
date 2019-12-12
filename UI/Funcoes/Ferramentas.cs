@@ -121,6 +121,44 @@ namespace Funcoes
          }
          return codigo;
       }
+      
+      /// <summary>
+      /// Método publico que faz a busca no banco de dados e retorna o código do valor selecionado na combobox.
+      /// </summary>
+      /// <param name="periodo"></param>
+      /// <returns></returns>
+      public static int BuscaCodigoPeriodo(string periodo)
+      {
+         var cmd = new OleDbCommand("SELECT * FROM tblPeriodos WHERE descricaoPeriodo = @periodo");
+
+         cmd.Parameters.AddWithValue("@periodo", periodo);
+
+         cmd.Connection = Conexao.connection;
+         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         Conexao.Conectar();
+
+         int codigo=0;
+
+         try
+         {
+            var reader = cmd.ExecuteReader();
+
+            reader.Read();
+            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            codigo = (int)reader["codPeriodo"];
+            //Retorna o valor encontrado.
+            
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
+         return codigo;
+      }
 
       /// <summary>
       /// Método que recupera os dados da tabela no banco de dados e armazena em um DataTable.
@@ -144,10 +182,7 @@ namespace Funcoes
          //Retorna os valores encontrados.
          return dt;
       }
-      /// <summary>
-      /// Método que recupera os dados da tabela no banco de dados e armazena em um DataTable.
-      /// </summary>
-      /// <returns></returns>
+      
       public static DataTable PreencheComboBoxTurma()
       {
          var cmd = new OleDbCommand("SELECT * FROM tblAnoTurmas");
@@ -166,13 +201,28 @@ namespace Funcoes
 
          return dt;
       }
-      /// <summary>
-      /// Método que recupera os dados da tabela no banco de dados e armazena em um DataTable.
-      /// </summary>
-      /// <returns></returns>
+      
       public static DataTable PreencheComboBoxGrupo()
       {
          var cmd = new OleDbCommand("SELECT * FROM tblGrupos");
+
+         cmd.Connection = Conexao.connection;
+
+         Conexao.Conectar();
+
+         var reader = cmd.ExecuteReader();
+
+         DataTable dt = new DataTable();
+
+         dt.Load(reader);
+
+         Conexao.Desconectar();
+
+         return dt;
+      }
+      public static DataTable PreencheComboBoxPeriodo()
+      {
+         var cmd = new OleDbCommand("SELECT * FROM tblPeriodos");
 
          cmd.Connection = Conexao.connection;
 
