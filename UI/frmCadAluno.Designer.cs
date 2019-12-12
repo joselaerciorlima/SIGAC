@@ -91,11 +91,6 @@
          this.cobTurma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
          this.cobTurma.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.cobTurma.FormattingEnabled = true;
-         this.cobTurma.Items.AddRange(new object[] {
-            "1º ANO",
-            "2º ANO",
-            "3º ANO",
-            "4º ANO"});
          this.cobTurma.Location = new System.Drawing.Point(375, 211);
          this.cobTurma.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
          this.cobTurma.Name = "cobTurma";
@@ -107,8 +102,6 @@
          this.cobCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
          this.cobCurso.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.cobCurso.FormattingEnabled = true;
-         this.cobCurso.Items.AddRange(new object[] {
-            "NUTRIÇÃO"});
          this.cobCurso.Location = new System.Drawing.Point(159, 211);
          this.cobCurso.Margin = new System.Windows.Forms.Padding(3, 3, 4, 3);
          this.cobCurso.Name = "cobCurso";
@@ -166,6 +159,7 @@
          this.btnSair.TabIndex = 16;
          this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
          this.btnSair.UseVisualStyleBackColor = true;
+         this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
          // 
          // frmCadAluno
          // 
@@ -185,6 +179,7 @@
          this.Controls.Add(this.btnSair);
          this.Name = "frmCadAluno";
          this.Text = "Form1";
+         this.Load += new System.EventHandler(this.frmCadAluno_Load);
          this.ResumeLayout(false);
          this.PerformLayout();
 
