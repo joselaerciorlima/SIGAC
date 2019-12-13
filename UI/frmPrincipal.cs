@@ -11,24 +11,64 @@ namespace UI
          InitializeComponent();
       }
 
-      private void alunoToolStripMenuItem_Click(object sender, EventArgs e)
+      private void button1_Click(object sender, EventArgs e)
       {
-         tabControl1.SelectTab(1);
+         var form = new frmCadAluno();
+         form.ShowDialog();
       }
 
-      private void atividadeComplementarToolStripMenuItem_Click(object sender, EventArgs e)
+      private void button2_Click(object sender, EventArgs e)
       {
-         tabControl1.SelectTab(2);
+         var form = new frmCadAtividade();
+         form.ShowDialog();
       }
 
-      private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+      private void button3_Click(object sender, EventArgs e)
       {
-         Close();
+         var form = new frmCadCertificado();
+         form.ShowDialog();
       }
 
-      private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+      private void button4_Click(object sender, EventArgs e)
       {
-         tabControl1.SelectTab(0);
+         var form = new frmCadCurso();
+         form.ShowDialog();
+      }
+
+      private void button5_Click(object sender, EventArgs e)
+      {
+         var form = new frmEditarAluno();
+         form.ShowDialog();
+      }
+
+      private void button6_Click(object sender, EventArgs e)
+      {
+         var form = new frmEditarAtividade();
+         form.ShowDialog();
+      }
+
+      private void button7_Click(object sender, EventArgs e)
+      {
+         var form = new frmEditarCertificado();
+         form.ShowDialog();
+      }
+
+      private void button9_Click(object sender, EventArgs e)
+      {
+         var form = new frmRelCargaHorariaAluno();
+         form.ShowDialog();
+      }
+
+      private void button10_Click(object sender, EventArgs e)
+      {
+         var form = new frmRelCertificadoAluno();
+         form.ShowDialog();
+      }
+
+      private void button11_Click(object sender, EventArgs e)
+      {
+         var form = new frmRelResumoAluno();
+         form.ShowDialog();
       }
    }
 }
