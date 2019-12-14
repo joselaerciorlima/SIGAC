@@ -123,6 +123,7 @@
     <Compile Include="frmVisualizar.Designer.cs">
       <DependentUpon>frmVisualizar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcoes\Localizar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCadAluno.resx">

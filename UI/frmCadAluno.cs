@@ -10,16 +10,21 @@ namespace UI
       {
          InitializeComponent();
       }
+      public string ondeSalvar = "";
       private void btnSalvar_Click(object sender, EventArgs e)
       {
-         //Busca o método que está dentro da classe 'Ferramentas' e passa o parametro com a combobox.
-         int curso = Ferramentas.BuscaCodigoCurso(cobCurso.Text);
+         if (ondeSalvar == "inserir")
+         {
+            //Busca o método que está dentro da classe 'Ferramentas' e passa o parametro com a combobox.
+            int curso = Ferramentas.BuscaCodigoCurso(cobCurso.Text);
 
-         int turma = Ferramentas.BuscaCodigoTurma(cobTurma.Text);
+            int turma = Ferramentas.BuscaCodigoTurma(cobTurma.Text);
 
-         string data = DateTime.Today.ToString();
+            string data = DateTime.Today.ToString();
 
-         var aluno = new Cadastrar(txbNome.Text, txbMatricula.Text, curso, turma, data);
+            var aluno = new Cadastrar(txbNome.Text, txbMatricula.Text, curso, turma, data);
+         }
+
       }
 
       private void frmCadAluno_Load(object sender, EventArgs e)
@@ -31,11 +36,28 @@ namespace UI
 
          cobTurma.DisplayMember = "anoTurma";
          cobTurma.DataSource = Ferramentas.PreencheComboBoxTurma();
+
       }
 
-      private void btnSair_Click(object sender, EventArgs e)
+      private void btnNovo_Click(object sender, EventArgs e)
       {
-         Close();
+         btnSalvar.Enabled = true;
+         btnNovo.Enabled = false;
+         btnEditar.Enabled = false;
+         btnCancelar.Enabled = true;
+         pnlDados.Enabled = true;
+         ondeSalvar = "inserir";
+      }
+
+      private void btnCancelar_Click(object sender, EventArgs e)
+      {
+         btnSalvar.Enabled = false;
+         btnEditar.Enabled = true;
+         btnExcluir.Enabled = false;
+         btnNovo.Enabled = true;
+         btnCancelar.Enabled = false;
+         pnlDados.Enabled = false;
+         pnlLista.Enabled = false;
       }
    }
 }
