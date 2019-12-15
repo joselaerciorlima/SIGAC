@@ -29,9 +29,9 @@
       private void InitializeComponent()
       {
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadAluno));
-         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
          this.toolStrip1 = new System.Windows.Forms.ToolStrip();
          this.btnNovo = new System.Windows.Forms.ToolStripButton();
          this.btnEditar = new System.Windows.Forms.ToolStripButton();
@@ -56,6 +56,9 @@
          this.clnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.clnCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.clnTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+         this.btnPesquisar = new System.Windows.Forms.Button();
+         this.label5 = new System.Windows.Forms.Label();
+         this.txbFiltro = new System.Windows.Forms.TextBox();
          this.toolStrip1.SuspendLayout();
          this.panel1.SuspendLayout();
          this.pnlDados.SuspendLayout();
@@ -97,6 +100,7 @@
          this.btnEditar.Name = "btnEditar";
          this.btnEditar.Size = new System.Drawing.Size(107, 36);
          this.btnEditar.Text = "Editar";
+         this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
          // 
          // btnExcluir
          // 
@@ -254,57 +258,61 @@
          // pnlLista
          // 
          this.pnlLista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+         this.pnlLista.Controls.Add(this.btnPesquisar);
+         this.pnlLista.Controls.Add(this.label5);
+         this.pnlLista.Controls.Add(this.txbFiltro);
          this.pnlLista.Controls.Add(this.dgvAluno);
          this.pnlLista.Dock = System.Windows.Forms.DockStyle.Bottom;
          this.pnlLista.Enabled = false;
-         this.pnlLista.Location = new System.Drawing.Point(0, 202);
+         this.pnlLista.Location = new System.Drawing.Point(0, 191);
          this.pnlLista.Name = "pnlLista";
-         this.pnlLista.Size = new System.Drawing.Size(784, 359);
+         this.pnlLista.Size = new System.Drawing.Size(784, 370);
          this.pnlLista.TabIndex = 0;
          // 
          // dgvAluno
          // 
          this.dgvAluno.AllowUserToAddRows = false;
          this.dgvAluno.AllowUserToDeleteRows = false;
-         dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-         dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-         dataGridViewCellStyle16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-         dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-         dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-         dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-         this.dgvAluno.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+         dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+         dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+         dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+         dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+         dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+         dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+         this.dgvAluno.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
          this.dgvAluno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
          this.dgvAluno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clnMatricula,
             this.clnNome,
             this.clnCurso,
             this.clnTurma});
-         this.dgvAluno.Location = new System.Drawing.Point(12, 3);
+         this.dgvAluno.Location = new System.Drawing.Point(12, 53);
          this.dgvAluno.MultiSelect = false;
          this.dgvAluno.Name = "dgvAluno";
          this.dgvAluno.ReadOnly = true;
          this.dgvAluno.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-         dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-         dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-         dataGridViewCellStyle17.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-         dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-         dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-         dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-         this.dgvAluno.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+         dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+         dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+         dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+         dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+         dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+         dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+         this.dgvAluno.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
          this.dgvAluno.RowHeadersVisible = false;
          this.dgvAluno.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-         dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-         dataGridViewCellStyle18.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-         this.dgvAluno.RowsDefaultCellStyle = dataGridViewCellStyle18;
+         dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+         dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+         this.dgvAluno.RowsDefaultCellStyle = dataGridViewCellStyle3;
          this.dgvAluno.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
          this.dgvAluno.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.dgvAluno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-         this.dgvAluno.Size = new System.Drawing.Size(760, 323);
+         this.dgvAluno.Size = new System.Drawing.Size(760, 273);
          this.dgvAluno.TabIndex = 26;
          this.dgvAluno.TabStop = false;
+         this.dgvAluno.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAluno_CellClick);
          // 
          // clnMatricula
          // 
@@ -336,6 +344,39 @@
          this.clnTurma.Name = "clnTurma";
          this.clnTurma.ReadOnly = true;
          // 
+         // btnPesquisar
+         // 
+         this.btnPesquisar.AutoSize = true;
+         this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
+         this.btnPesquisar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.btnPesquisar.Location = new System.Drawing.Point(295, 6);
+         this.btnPesquisar.Name = "btnPesquisar";
+         this.btnPesquisar.Size = new System.Drawing.Size(61, 29);
+         this.btnPesquisar.TabIndex = 30;
+         this.btnPesquisar.Text = "Filtrar";
+         this.btnPesquisar.UseVisualStyleBackColor = true;
+         this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+         // 
+         // label5
+         // 
+         this.label5.AutoSize = true;
+         this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label5.Location = new System.Drawing.Point(20, 11);
+         this.label5.Margin = new System.Windows.Forms.Padding(3, 15, 10, 3);
+         this.label5.Name = "label5";
+         this.label5.Size = new System.Drawing.Size(106, 19);
+         this.label5.TabIndex = 29;
+         this.label5.Text = "MATRÍCULA";
+         // 
+         // txbFiltro
+         // 
+         this.txbFiltro.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.txbFiltro.Location = new System.Drawing.Point(134, 8);
+         this.txbFiltro.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
+         this.txbFiltro.Name = "txbFiltro";
+         this.txbFiltro.Size = new System.Drawing.Size(150, 25);
+         this.txbFiltro.TabIndex = 28;
+         // 
          // frmCadAluno
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,6 +400,7 @@
          this.pnlDados.ResumeLayout(false);
          this.pnlDados.PerformLayout();
          this.pnlLista.ResumeLayout(false);
+         this.pnlLista.PerformLayout();
          ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).EndInit();
          this.ResumeLayout(false);
 
@@ -389,5 +431,8 @@
       private System.Windows.Forms.DataGridViewTextBoxColumn clnNome;
       private System.Windows.Forms.DataGridViewTextBoxColumn clnCurso;
       private System.Windows.Forms.DataGridViewTextBoxColumn clnTurma;
+      private System.Windows.Forms.Button btnPesquisar;
+      private System.Windows.Forms.Label label5;
+      private System.Windows.Forms.TextBox txbFiltro;
    }
 }

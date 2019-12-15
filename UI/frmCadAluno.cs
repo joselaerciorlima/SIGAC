@@ -1,5 +1,8 @@
-﻿using Funcoes;
+﻿using Classes;
+using Funcoes;
 using System;
+using System.Data;
+using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace UI
@@ -58,6 +61,61 @@ namespace UI
          btnCancelar.Enabled = false;
          pnlDados.Enabled = false;
          pnlLista.Enabled = false;
+         dgvAluno.Rows.Clear();
+      }
+
+      private void btnEditar_Click(object sender, EventArgs e)
+      {
+         btnSalvar.Enabled = true;
+         btnNovo.Enabled = false;
+         btnCancelar.Enabled = true;
+         pnlDados.Enabled = true;
+         pnlLista.Enabled = true;         
+         ondeSalvar = "atualizar";
+      }
+
+      private void btnPesquisar_Click(object sender, EventArgs e)
+      {
+
+         if (ondeSalvar == "atualizar")
+         {
+            string comando = "SELECT * FROM tblAlunos WHERE matricula LIKE '" + txbFiltro.Text + "%'";
+
+            var cmd = new OleDbCommand(comando);
+
+            cmd.Connection = Conexao.connection;
+
+            Conexao.Conectar();
+
+            try
+            {
+               var reader = cmd.ExecuteReader();
+               int i = 0;
+               dgvAluno.Rows.Clear();
+
+               while (reader.Read())
+               {
+                  dgvAluno.Rows.Add();
+                  dgvAluno.Rows[i].Cells["clnMatricula"].Value = reader["matricula"];
+                  dgvAluno.Rows[i].Cells["clnNome"].Value = reader["nome"];
+                  dgvAluno.Rows[i].Cells["clnCurso"].Value = reader["codCurso"];
+                  dgvAluno.Rows[i].Cells["clnTurma"].Value = reader["codTurma"];
+                  i++;
+               }
+            }
+            catch (Exception erro)
+            { MessageBox.Show(erro.Message);}
+            finally
+            { Conexao.Desconectar();}
+         }
+      }
+
+      private void dgvAluno_CellClick(object sender, DataGridViewCellEventArgs e)
+      {
+         txbMatricula.Text = dgvAluno.SelectedCells[0].Value.ToString();
+         txbNome.Text = dgvAluno.SelectedCells[1].Value.ToString();
+         cobCurso.Text = dgvAluno.SelectedCells[2].Value.ToString();
+         cobTurma.Text = dgvAluno.SelectedCells[3].Value.ToString();
       }
    }
 }
