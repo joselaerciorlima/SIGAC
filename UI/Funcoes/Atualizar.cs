@@ -67,7 +67,7 @@ namespace Funcoes
             Conexao.Desconectar();
          }
       }
-      public Atualizar(string codCertificado, string matricula,string codAluno,string descricao, string cargaHoraria,string dataCertificado, int codClassificacao, string dataAlteracao)
+      public Atualizar(string codCertificado, string matricula, string codAluno, string descricao, string cargaHoraria, string dataCertificado, int codClassificacao, string dataAlteracao)
       {
          var cmd = new OleDbCommand("UPDATE tblCertificados SET codAluno = @aluno, descricaoCertificado = @descricao, cargaHorariaCertificado = @carga, matricula = @matricula, codAtividade = @classificacao, dataCertificado = @data, ultimaAlteracao = @alteracao WHERE codCertificado LIKE " + codCertificado);
 
@@ -78,6 +78,32 @@ namespace Funcoes
          cmd.Parameters.AddWithValue("@classificacao", codClassificacao);
          cmd.Parameters.AddWithValue("@data", dataCertificado);
          cmd.Parameters.AddWithValue("@alteracao", dataAlteracao);
+
+         cmd.Connection = Conexao.connection;
+         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         Conexao.Conectar();
+
+         try
+         {
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Cadastro atualizado com sucesso!");
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
+      }
+      public Atualizar(string codCurso, string descricao, int periodo, string data)
+      {
+         var cmd = new OleDbCommand("UPDATE tblCursos SET descricaoCurso = @descricao, codPeriodo = @periodo, ultimaAlteracao = @alteracao WHERE codCurso LIKE " + codCurso);
+
+         cmd.Parameters.AddWithValue("@decricao", descricao);
+         cmd.Parameters.AddWithValue("@periodo", periodo);
+         cmd.Parameters.AddWithValue("@alteracao", data);
 
          cmd.Connection = Conexao.connection;
          //Chama o método de conexão que está dentro da classe 'Conexao'.

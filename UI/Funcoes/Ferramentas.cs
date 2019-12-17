@@ -366,6 +366,38 @@ namespace Funcoes
          //Retorna o valor encontrado.
          return descricao;
       }
+      public static string ConvertePeriodo(int periodo)
+      {
+         var cmd = new OleDbCommand("SELECT * FROM tblPeriodos WHERE codPeriodo = @periodo");
+
+         cmd.Parameters.AddWithValue("@periodo", periodo);
+
+         cmd.Connection = Conexao.connection;
+         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         Conexao.Conectar();
+
+         string descricao = "";
+
+         try
+         {
+            var reader = cmd.ExecuteReader();
+
+            reader.Read();
+            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            descricao = reader["descricaoPeriodo"].ToString();
+
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
+         //Retorna o valor encontrado.
+         return descricao;
+      }
 
 
       /// <summary>

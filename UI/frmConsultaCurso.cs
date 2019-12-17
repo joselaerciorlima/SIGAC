@@ -5,27 +5,26 @@ using System.Windows.Forms;
 
 namespace UI
 {
-   public partial class frmConsultaAtividade : Form
+   public partial class frmConsultaCurso : Form
    {
-      public frmConsultaAtividade()
+      public frmConsultaCurso()
       {
          InitializeComponent();
       }
       public string codigo = "";
       public string descricao = "";
-      public string cargaHoraria = "";
-      public int grupo = 0;
+      public int periodo = 0;
 
       private void btnLocalizar_Click(object sender, EventArgs e)
       {
          string comando = "";
          if (txbFiltro.Text != "")
          {
-            comando = "SELECT * FROM tblAtividades WHERE descricaoAtividade LIKE '" + txbFiltro.Text + "%'";
+            comando = "SELECT * FROM tblCursos WHERE descricaoCurso LIKE '" + txbFiltro.Text + "%'";
          }
          else
          {
-            comando = "SELECT * FROM tblAtividades";
+            comando = "SELECT * FROM tblCursos";
          }
 
          var cmd = new OleDbCommand(comando);
@@ -43,10 +42,9 @@ namespace UI
             while (reader.Read())
             {
                dgvDados.Rows.Add();
-               dgvDados.Rows[i].Cells["clnDescricao"].Value = reader["descricaoAtividade"];
-               dgvDados.Rows[i].Cells["clnCarga"].Value = reader["cargaHorariaAtividade"];
-               dgvDados.Rows[i].Cells["clnGrupo"].Value = reader["codGrupo"];
-               dgvDados.Rows[i].Cells["clnCodigo"].Value = reader["codAtividade"];
+               dgvDados.Rows[i].Cells["clnDescricao"].Value = reader["descricaoCurso"];
+               dgvDados.Rows[i].Cells["clnPeriodo"].Value = reader["codPeriodo"];
+               dgvDados.Rows[i].Cells["clnCodigo"].Value = reader["codCurso"];
                i++;
             }
          }
@@ -65,9 +63,8 @@ namespace UI
          if (e.RowIndex >= 0)
          {
             descricao = dgvDados.Rows[e.RowIndex].Cells[0].Value.ToString();
-            cargaHoraria = dgvDados.Rows[e.RowIndex].Cells[1].Value.ToString();
-            grupo = (int)dgvDados.Rows[e.RowIndex].Cells[2].Value;
-            codigo = dgvDados.Rows[e.RowIndex].Cells[3].Value.ToString();
+            periodo = (int)dgvDados.Rows[e.RowIndex].Cells[1].Value;
+            codigo = dgvDados.Rows[e.RowIndex].Cells[2].Value.ToString();
             Close();
          }
       }

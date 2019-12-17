@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
-   public partial class frmCadAtividade : UI.frmModelo
+   public partial class frmCadAtividade : frmModelo
    {
       public frmCadAtividade()
       {

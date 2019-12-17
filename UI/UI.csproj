@@ -90,6 +90,12 @@
     <Compile Include="frmConsultaCertificado.Designer.cs">
       <DependentUpon>frmConsultaCertificado.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConsultaCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaCurso.Designer.cs">
+      <DependentUpon>frmConsultaCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Funcoes\Atualizar.cs" />
     <Compile Include="Modelo\frmModelo.cs">
       <SubType>Form</SubType>
@@ -105,24 +111,6 @@
     </Compile>
     <Compile Include="Funcoes\Cadastrar.cs" />
     <Compile Include="Funcoes\Ferramentas.cs" />
-    <Compile Include="frmEditarAluno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEditarAluno.Designer.cs">
-      <DependentUpon>frmEditarAluno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEditarAtividade.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEditarAtividade.Designer.cs">
-      <DependentUpon>frmEditarAtividade.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEditarCertificado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEditarCertificado.Designer.cs">
-      <DependentUpon>frmEditarCertificado.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmRelCargaHorariaAluno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,14 +159,8 @@
     <EmbeddedResource Include="frmConsultaCertificado.resx">
       <DependentUpon>frmConsultaCertificado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditarAluno.resx">
-      <DependentUpon>frmEditarAluno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEditarAtividade.resx">
-      <DependentUpon>frmEditarAtividade.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEditarCertificado.resx">
-      <DependentUpon>frmEditarCertificado.cs</DependentUpon>
+    <EmbeddedResource Include="frmConsultaCurso.resx">
+      <DependentUpon>frmConsultaCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modelo\frmModelo.resx">
       <DependentUpon>frmModelo.cs</DependentUpon>

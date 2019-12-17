@@ -145,6 +145,7 @@
          this.txbCodAtividade.Name = "txbCodAtividade";
          this.txbCodAtividade.Size = new System.Drawing.Size(58, 25);
          this.txbCodAtividade.TabIndex = 32;
+         this.txbCodAtividade.Visible = false;
          // 
          // frmCadAtividade
          // 

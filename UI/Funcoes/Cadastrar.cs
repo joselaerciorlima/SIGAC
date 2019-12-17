@@ -144,6 +144,31 @@ namespace Funcoes
             Conexao.Desconectar();
          }
       }
+      public Cadastrar(string descricao,int periodo,string data)
+      {
+         var cmd = new OleDbCommand("INSERT INTO tblCursos (descricaoCurso,codPeriodo,dataCadastro) VALUES (@descricao,@periodo,@dataCadastro)");
 
+         cmd.Parameters.AddWithValue("@descricao", descricao);
+         cmd.Parameters.AddWithValue("@periodo", periodo);
+         cmd.Parameters.AddWithValue("@dataCadastro", data);
+
+         cmd.Connection = Conexao.connection;
+         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         Conexao.Conectar();
+
+         try
+         {
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Cadastro realizado com sucesso!");
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
+      }
    }
 }

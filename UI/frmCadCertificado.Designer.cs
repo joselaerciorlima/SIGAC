@@ -194,6 +194,7 @@
          // 
          // txbDescricao
          // 
+         this.txbDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
          this.txbDescricao.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.txbDescricao.Location = new System.Drawing.Point(133, 118);
          this.txbDescricao.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
@@ -228,6 +229,7 @@
          this.txbCodCertificado.Name = "txbCodCertificado";
          this.txbCodCertificado.Size = new System.Drawing.Size(63, 25);
          this.txbCodCertificado.TabIndex = 34;
+         this.txbCodCertificado.Visible = false;
          // 
          // txbCodAluno
          // 
@@ -237,6 +239,7 @@
          this.txbCodAluno.Name = "txbCodAluno";
          this.txbCodAluno.Size = new System.Drawing.Size(63, 25);
          this.txbCodAluno.TabIndex = 34;
+         this.txbCodAluno.Visible = false;
          // 
          // btnPesquisarAluno
          // 

@@ -1,7 +1,4 @@
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmCadAluno.resources
-C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmEditarAluno.resources
-C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmEditarAtividade.resources
-C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmEditarCertificado.resources
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmModelo.resources
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmPrincipal.resources
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmRelCargaHorariaAluno.resources
@@ -22,3 +19,4 @@ C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementa
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmConsultaAluno.resources
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmConsultaAtividade.resources
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmConsultaCertificado.resources
+C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmConsultaCurso.resources
