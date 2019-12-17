@@ -47,25 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Atualizar.cs" />
     <Compile Include="Classes\Conexao.cs" />
-    <Compile Include="frmCadAluno1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCadAluno1.Designer.cs">
-      <DependentUpon>frmCadAluno1.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCadAtividade.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCadAtividade.Designer.cs">
       <DependentUpon>frmCadAtividade.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmCadCertificado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCadCertificado.Designer.cs">
-      <DependentUpon>frmCadCertificado.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCadCurso.cs">
       <SubType>Form</SubType>
@@ -73,11 +60,29 @@
     <Compile Include="frmCadCurso.Designer.cs">
       <DependentUpon>frmCadCurso.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConsulaAluno.cs">
+    <Compile Include="frmCadCertificado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsulaAluno.Designer.cs">
-      <DependentUpon>frmConsulaAluno.cs</DependentUpon>
+    <Compile Include="frmCadCertificado.Designer.cs">
+      <DependentUpon>frmCadCertificado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadAluno.Designer.cs">
+      <DependentUpon>frmCadAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaAluno.Designer.cs">
+      <DependentUpon>frmConsultaAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaAtividade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaAtividade.Designer.cs">
+      <DependentUpon>frmConsultaAtividade.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcoes\Atualizar.cs" />
     <Compile Include="Modelo\frmModelo.cs">
@@ -94,12 +99,6 @@
     </Compile>
     <Compile Include="Funcoes\Cadastrar.cs" />
     <Compile Include="Funcoes\Ferramentas.cs" />
-    <Compile Include="frmCadAluno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCadAluno.Designer.cs">
-      <DependentUpon>frmCadAluno.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmEditarAluno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,23 +144,23 @@
     <Compile Include="Funcoes\Localizar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmCadAluno.resx">
-      <DependentUpon>frmCadAluno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmCadAluno1.resx">
-      <DependentUpon>frmCadAluno1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCadAtividade.resx">
       <DependentUpon>frmCadAtividade.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmCadCertificado.resx">
-      <DependentUpon>frmCadCertificado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadCurso.resx">
       <DependentUpon>frmCadCurso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsulaAluno.resx">
-      <DependentUpon>frmConsulaAluno.cs</DependentUpon>
+    <EmbeddedResource Include="frmCadCertificado.resx">
+      <DependentUpon>frmCadCertificado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadAluno.resx">
+      <DependentUpon>frmCadAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaAluno.resx">
+      <DependentUpon>frmConsultaAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaAtividade.resx">
+      <DependentUpon>frmConsultaAtividade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditarAluno.resx">
       <DependentUpon>frmEditarAluno.cs</DependentUpon>
@@ -212,25 +211,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Icones\anxiety.png" />
-    <Content Include="Icones\binoculars 2.png" />
-    <Content Include="Icones\binoculars.png" />
-    <Content Include="Icones\chart.png" />
-    <Content Include="Icones\chart_iPF_icon.ico" />
-    <Content Include="Icones\delete.png" />
-    <Content Include="Icones\door.png" />
-    <Content Include="Icones\floppy-disk.png" />
-    <Content Include="Icones\goal.png" />
-    <Content Include="Icones\magnifying-glass.png" />
-    <Content Include="Icones\pdf %282%29.png" />
-    <Content Include="Icones\pdf.png" />
-    <Content Include="Icones\register.png" />
-    <Content Include="Icones\register_GZQ_icon.ico" />
-    <Content Include="Icones\success.png" />
-    <Content Include="Icones\test.png" />
-    <Content Include="Icones\test_X8X_icon.ico" />
+    <Content Include="Icones\icons8-cancelar-32.png" />
+    <Content Include="Icones\icons8-editar-arquivo-32.png" />
+    <Content Include="Icones\icons8-excluir-32.png" />
+    <Content Include="Icones\icons8-novo-arquivo-32.png" />
+    <Content Include="Icones\icons8-pesquisar-32.png" />
+    <Content Include="Icones\icons8-salvar-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

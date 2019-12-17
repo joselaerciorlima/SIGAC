@@ -49,13 +49,14 @@ namespace Funcoes
       /// <param name="descricao"></param>
       /// <param name="cargaHoraria"></param>
       /// <param name="grupo"></param>
-      public Cadastrar(string descricao, string cargaHoraria, int grupo)
+      public Cadastrar(string descricao, string cargaHoraria, int grupo, string dataCadastro)
       {
-         var cmd = new OleDbCommand("INSERT INTO tblAtividades (codGrupo,descricaoAtividade,cargaHorariaAtividade) VALUES (@codGrupo,@descricao,@cargaHoraria)");
+         var cmd = new OleDbCommand("INSERT INTO tblAtividades (codGrupo,descricaoAtividade,cargaHorariaAtividade,dataCadastro) VALUES (@codGrupo,@descricao,@cargaHoraria,@dataCadastro)");
 
          cmd.Parameters.AddWithValue("@codGrupo", grupo);
          cmd.Parameters.AddWithValue("@descricao", descricao);
          cmd.Parameters.AddWithValue("@cargaHoraria", cargaHoraria);
+         cmd.Parameters.AddWithValue("@dataCadastro", dataCadastro);
 
          cmd.Connection = Conexao.connection;
          //Chama o método de conexão que está dentro da classe 'Conexao'.
@@ -83,15 +84,16 @@ namespace Funcoes
       /// <param name="descricao"></param>
       /// <param name="dataCertificado"></param>
       /// <param name="cargaHoraria"></param>
-      public Cadastrar(string matricula, string dataCertificado, string descricao, int atividade, string cargaHoraria)
+      public Cadastrar(string matricula, string dataCertificado, string descricao, int atividade, string cargaHoraria, string dataCadastro)
       {
-         var cmd = new OleDbCommand("INSERT INTO tblCertificados (matricula,dataCertificado,descricaoCertificado,codAtividade,cargaHorariaCertificado) VALUES (@matricula,@dataCertificado,@descricaoCertificado,@codAtividade,@cargaHorariaCertificado)");
+         var cmd = new OleDbCommand("INSERT INTO tblCertificados (matricula,dataCertificado,descricaoCertificado,codAtividade,cargaHorariaCertificado,dataCadastro) VALUES (@matricula,@dataCertificado,@descricaoCertificado,@codAtividade,@cargaHorariaCertificado,@dataCadastro))");
 
          cmd.Parameters.AddWithValue("@matricula", matricula);
          cmd.Parameters.AddWithValue("@dataCertificado", dataCertificado);
          cmd.Parameters.AddWithValue("@descricaoCertificado", descricao);
          cmd.Parameters.AddWithValue("@codAtividade", atividade);
          cmd.Parameters.AddWithValue("@cargaHorariaCertificado", cargaHoraria);
+         cmd.Parameters.AddWithValue("@dataCadastro", dataCadastro);
 
          cmd.Connection = Conexao.connection;
          //Chama o método de conexão que está dentro da classe 'Conexao'.

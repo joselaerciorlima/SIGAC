@@ -5,13 +5,13 @@ using System.Windows.Forms;
 
 namespace UI
 {
-   public partial class frmConsulaAluno : Form
+   public partial class frmConsultaAluno : Form
    {
-      public frmConsulaAluno()
+      public frmConsultaAluno()
       {
          InitializeComponent();
       }
-      public int codigo = 0;
+      public string codigo = "";
       public string nome = "", matricula = "";
       public int curso = 0;
       public int turma = 0;
@@ -73,7 +73,7 @@ namespace UI
          btnLocalizar_Click(sender, e);
       }
 
-      private void frmConsulaAluno_Load(object sender, EventArgs e)
+      private void frmConsultaAluno_Load(object sender, EventArgs e)
       {
          btnLocalizar_Click(sender, e);
       }
@@ -86,7 +86,7 @@ namespace UI
             nome = dgvDados.Rows[e.RowIndex].Cells[1].Value.ToString();
             curso = (int)dgvDados.Rows[e.RowIndex].Cells[2].Value;
             turma = (int)dgvDados.Rows[e.RowIndex].Cells[3].Value;
-            codigo = (int)dgvDados.Rows[e.RowIndex].Cells[4].Value;
+            codigo = dgvDados.Rows[e.RowIndex].Cells[4].Value.ToString();
             Close();
          }
       }

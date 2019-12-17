@@ -3,14 +3,14 @@
    partial class frmCadCertificado
    {
       /// <summary>
-      /// Required designer variable.
+      /// Variável de designer necessária.
       /// </summary>
       private System.ComponentModel.IContainer components = null;
 
       /// <summary>
-      /// Clean up any resources being used.
+      /// Limpar os recursos que estão sendo usados.
       /// </summary>
-      /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+      /// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
       protected override void Dispose(bool disposing)
       {
          if (disposing && (components != null))
@@ -20,15 +20,14 @@
          base.Dispose(disposing);
       }
 
-      #region Windows Form Designer generated code
+      #region Código gerado pelo Windows Form Designer
 
       /// <summary>
-      /// Required method for Designer support - do not modify
-      /// the contents of this method with the code editor.
+      /// Método necessário para suporte ao Designer - não modifique 
+      /// o conteúdo deste método com o editor de código.
       /// </summary>
       private void InitializeComponent()
       {
-         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadCertificado));
          this.label2 = new System.Windows.Forms.Label();
          this.label3 = new System.Windows.Forms.Label();
          this.label6 = new System.Windows.Forms.Label();
@@ -36,209 +35,178 @@
          this.label5 = new System.Windows.Forms.Label();
          this.label1 = new System.Windows.Forms.Label();
          this.cobClassificacao = new System.Windows.Forms.ComboBox();
-         this.prbAluno = new System.Windows.Forms.ProgressBar();
          this.txbCargaHoraria = new System.Windows.Forms.TextBox();
-         this.txbAluno = new System.Windows.Forms.TextBox();
+         this.txbNome = new System.Windows.Forms.TextBox();
          this.txbDescricao = new System.Windows.Forms.TextBox();
-         this.btnSalvar = new System.Windows.Forms.Button();
-         this.btnSair = new System.Windows.Forms.Button();
-         this.txbData = new System.Windows.Forms.MaskedTextBox();
-         this.txbMatricula = new System.Windows.Forms.MaskedTextBox();
+         this.txbMatricula = new System.Windows.Forms.TextBox();
+         this.txbData = new System.Windows.Forms.TextBox();
+         this.txbCodAluno = new System.Windows.Forms.TextBox();
+         this.panel1.SuspendLayout();
+         this.pnDados.SuspendLayout();
          this.SuspendLayout();
+         // 
+         // pnDados
+         // 
+         this.pnDados.Controls.Add(this.txbData);
+         this.pnDados.Controls.Add(this.txbMatricula);
+         this.pnDados.Controls.Add(this.label2);
+         this.pnDados.Controls.Add(this.label3);
+         this.pnDados.Controls.Add(this.label6);
+         this.pnDados.Controls.Add(this.label4);
+         this.pnDados.Controls.Add(this.label5);
+         this.pnDados.Controls.Add(this.label1);
+         this.pnDados.Controls.Add(this.cobClassificacao);
+         this.pnDados.Controls.Add(this.txbCodAluno);
+         this.pnDados.Controls.Add(this.txbCargaHoraria);
+         this.pnDados.Controls.Add(this.txbNome);
+         this.pnDados.Controls.Add(this.txbDescricao);
          // 
          // label2
          // 
          this.label2.AutoSize = true;
-         this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label2.Location = new System.Drawing.Point(231, 75);
+         this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label2.Location = new System.Drawing.Point(184, 18);
          this.label2.Margin = new System.Windows.Forms.Padding(3, 15, 10, 3);
          this.label2.Name = "label2";
-         this.label2.Size = new System.Drawing.Size(146, 19);
-         this.label2.TabIndex = 21;
-         this.label2.Text = "NOME DO ALUNO";
+         this.label2.Size = new System.Drawing.Size(126, 19);
+         this.label2.TabIndex = 35;
+         this.label2.Text = "Nome do Aluno";
          // 
          // label3
          // 
          this.label3.AutoSize = true;
-         this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label3.Location = new System.Drawing.Point(114, 213);
+         this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label3.Location = new System.Drawing.Point(14, 168);
          this.label3.Margin = new System.Windows.Forms.Padding(3, 15, 10, 3);
          this.label3.Name = "label3";
-         this.label3.Size = new System.Drawing.Size(136, 19);
-         this.label3.TabIndex = 23;
-         this.label3.Text = "CLASSIFICAÇÃO";
+         this.label3.Size = new System.Drawing.Size(261, 19);
+         this.label3.TabIndex = 36;
+         this.label3.Text = "Classificação do Certificado";
          // 
          // label6
          // 
          this.label6.AutoSize = true;
-         this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label6.Location = new System.Drawing.Point(600, 213);
+         this.label6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label6.Location = new System.Drawing.Point(519, 168);
          this.label6.Margin = new System.Windows.Forms.Padding(3, 15, 10, 3);
          this.label6.Name = "label6";
-         this.label6.Size = new System.Drawing.Size(40, 19);
-         this.label6.TabIndex = 24;
-         this.label6.Text = "C. H";
+         this.label6.Size = new System.Drawing.Size(126, 19);
+         this.label6.TabIndex = 37;
+         this.label6.Text = "Carga Horária";
          // 
          // label4
          // 
          this.label4.AutoSize = true;
-         this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label4.Location = new System.Drawing.Point(600, 75);
+         this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label4.Location = new System.Drawing.Point(14, 93);
          this.label4.Margin = new System.Windows.Forms.Padding(3, 15, 10, 3);
          this.label4.Name = "label4";
-         this.label4.Size = new System.Drawing.Size(51, 19);
-         this.label4.TabIndex = 25;
-         this.label4.Text = "DATA";
+         this.label4.Size = new System.Drawing.Size(45, 19);
+         this.label4.TabIndex = 38;
+         this.label4.Text = "Data";
          // 
          // label5
          // 
          this.label5.AutoSize = true;
-         this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label5.Location = new System.Drawing.Point(114, 143);
+         this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label5.Location = new System.Drawing.Point(112, 93);
          this.label5.Margin = new System.Windows.Forms.Padding(3, 15, 10, 3);
          this.label5.Name = "label5";
-         this.label5.Size = new System.Drawing.Size(244, 19);
-         this.label5.TabIndex = 26;
-         this.label5.Text = "DESCRIÇÃO DO CERTIFICADO";
+         this.label5.Size = new System.Drawing.Size(225, 19);
+         this.label5.TabIndex = 39;
+         this.label5.Text = "Descrição do Certificado";
          // 
          // label1
          // 
          this.label1.AutoSize = true;
-         this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label1.Location = new System.Drawing.Point(114, 75);
+         this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label1.Location = new System.Drawing.Point(14, 18);
          this.label1.Margin = new System.Windows.Forms.Padding(3, 15, 10, 3);
          this.label1.Name = "label1";
-         this.label1.Size = new System.Drawing.Size(106, 19);
-         this.label1.TabIndex = 27;
-         this.label1.Text = "MATRÍCULA";
+         this.label1.Size = new System.Drawing.Size(90, 19);
+         this.label1.TabIndex = 40;
+         this.label1.Text = "Matrícula";
          // 
          // cobClassificacao
          // 
          this.cobClassificacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-         this.cobClassificacao.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.cobClassificacao.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.cobClassificacao.FormattingEnabled = true;
-         this.cobClassificacao.Location = new System.Drawing.Point(118, 238);
+         this.cobClassificacao.Location = new System.Drawing.Point(18, 193);
          this.cobClassificacao.Margin = new System.Windows.Forms.Padding(3, 3, 4, 3);
          this.cobClassificacao.Name = "cobClassificacao";
-         this.cobClassificacao.Size = new System.Drawing.Size(476, 25);
-         this.cobClassificacao.TabIndex = 18;
-         // 
-         // prbAluno
-         // 
-         this.prbAluno.Location = new System.Drawing.Point(103, 353);
-         this.prbAluno.Name = "prbAluno";
-         this.prbAluno.Size = new System.Drawing.Size(595, 23);
-         this.prbAluno.TabIndex = 28;
+         this.cobClassificacao.Size = new System.Drawing.Size(486, 26);
+         this.cobClassificacao.TabIndex = 33;
          // 
          // txbCargaHoraria
          // 
-         this.txbCargaHoraria.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txbCargaHoraria.Location = new System.Drawing.Point(604, 238);
+         this.txbCargaHoraria.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.txbCargaHoraria.Location = new System.Drawing.Point(523, 193);
          this.txbCargaHoraria.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
          this.txbCargaHoraria.Name = "txbCargaHoraria";
-         this.txbCargaHoraria.Size = new System.Drawing.Size(80, 25);
-         this.txbCargaHoraria.TabIndex = 19;
+         this.txbCargaHoraria.Size = new System.Drawing.Size(122, 25);
+         this.txbCargaHoraria.TabIndex = 34;
          // 
-         // txbAluno
+         // txbNome
          // 
-         this.txbAluno.Enabled = false;
-         this.txbAluno.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txbAluno.Location = new System.Drawing.Point(230, 100);
-         this.txbAluno.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
-         this.txbAluno.Name = "txbAluno";
-         this.txbAluno.Size = new System.Drawing.Size(364, 25);
-         this.txbAluno.TabIndex = 15;
+         this.txbNome.Enabled = false;
+         this.txbNome.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.txbNome.Location = new System.Drawing.Point(188, 43);
+         this.txbNome.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+         this.txbNome.Name = "txbNome";
+         this.txbNome.Size = new System.Drawing.Size(455, 25);
+         this.txbNome.TabIndex = 31;
          // 
          // txbDescricao
          // 
-         this.txbDescricao.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txbDescricao.Location = new System.Drawing.Point(118, 168);
+         this.txbDescricao.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.txbDescricao.Location = new System.Drawing.Point(116, 118);
          this.txbDescricao.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
          this.txbDescricao.Name = "txbDescricao";
-         this.txbDescricao.Size = new System.Drawing.Size(566, 25);
-         this.txbDescricao.TabIndex = 17;
-         // 
-         // btnSalvar
-         // 
-         this.btnSalvar.AutoSize = true;
-         this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-         this.btnSalvar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-         this.btnSalvar.Location = new System.Drawing.Point(552, 291);
-         this.btnSalvar.Name = "btnSalvar";
-         this.btnSalvar.Size = new System.Drawing.Size(55, 41);
-         this.btnSalvar.TabIndex = 20;
-         this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-         this.btnSalvar.UseVisualStyleBackColor = true;
-         this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-         // 
-         // btnSair
-         // 
-         this.btnSair.AutoSize = true;
-         this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
-         this.btnSair.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-         this.btnSair.Location = new System.Drawing.Point(629, 291);
-         this.btnSair.Name = "btnSair";
-         this.btnSair.Size = new System.Drawing.Size(55, 41);
-         this.btnSair.TabIndex = 22;
-         this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-         this.btnSair.UseVisualStyleBackColor = true;
-         this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-         // 
-         // txbData
-         // 
-         this.txbData.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txbData.Location = new System.Drawing.Point(604, 100);
-         this.txbData.Mask = "00/00/0000";
-         this.txbData.Name = "txbData";
-         this.txbData.Size = new System.Drawing.Size(80, 25);
-         this.txbData.TabIndex = 29;
-         this.txbData.ValidatingType = typeof(System.DateTime);
+         this.txbDescricao.Size = new System.Drawing.Size(529, 25);
+         this.txbDescricao.TabIndex = 32;
          // 
          // txbMatricula
          // 
-         this.txbMatricula.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txbMatricula.Location = new System.Drawing.Point(118, 100);
-         this.txbMatricula.Mask = "0000000000";
+         this.txbMatricula.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.txbMatricula.Location = new System.Drawing.Point(18, 43);
+         this.txbMatricula.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
          this.txbMatricula.Name = "txbMatricula";
-         this.txbMatricula.Size = new System.Drawing.Size(102, 25);
-         this.txbMatricula.TabIndex = 30;
-         this.txbMatricula.ValidatingType = typeof(int);
+         this.txbMatricula.Size = new System.Drawing.Size(156, 25);
+         this.txbMatricula.TabIndex = 42;
+         // 
+         // txbData
+         // 
+         this.txbData.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.txbData.Location = new System.Drawing.Point(18, 118);
+         this.txbData.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
+         this.txbData.Name = "txbData";
+         this.txbData.Size = new System.Drawing.Size(80, 25);
+         this.txbData.TabIndex = 42;
+         // 
+         // txbCodAluno
+         // 
+         this.txbCodAluno.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.txbCodAluno.Location = new System.Drawing.Point(684, 43);
+         this.txbCodAluno.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
+         this.txbCodAluno.Name = "txbCodAluno";
+         this.txbCodAluno.Size = new System.Drawing.Size(63, 25);
+         this.txbCodAluno.TabIndex = 34;
          // 
          // frmCadCertificado
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size(800, 450);
-         this.Controls.Add(this.txbMatricula);
-         this.Controls.Add(this.txbData);
-         this.Controls.Add(this.label2);
-         this.Controls.Add(this.label3);
-         this.Controls.Add(this.label6);
-         this.Controls.Add(this.label4);
-         this.Controls.Add(this.label5);
-         this.Controls.Add(this.label1);
-         this.Controls.Add(this.cobClassificacao);
-         this.Controls.Add(this.prbAluno);
-         this.Controls.Add(this.txbCargaHoraria);
-         this.Controls.Add(this.txbAluno);
-         this.Controls.Add(this.txbDescricao);
-         this.Controls.Add(this.btnSalvar);
-         this.Controls.Add(this.btnSair);
-         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-         this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+         this.ClientSize = new System.Drawing.Size(784, 561);
          this.Name = "frmCadCertificado";
-         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-         this.Text = "frmCadCertificado";
-         this.Load += new System.EventHandler(this.frmCadCertificado_Load);
+         this.Text = "Cadastro - Atividade Complementar";
+         this.panel1.ResumeLayout(false);
+         this.pnDados.ResumeLayout(false);
+         this.pnDados.PerformLayout();
          this.ResumeLayout(false);
-         this.PerformLayout();
 
       }
 
         #endregion
-
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
@@ -246,13 +214,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cobClassificacao;
-        private System.Windows.Forms.ProgressBar prbAluno;
         private System.Windows.Forms.TextBox txbCargaHoraria;
-        private System.Windows.Forms.TextBox txbAluno;
+        private System.Windows.Forms.TextBox txbNome;
         private System.Windows.Forms.TextBox txbDescricao;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.MaskedTextBox txbData;
-        private System.Windows.Forms.MaskedTextBox txbMatricula;
+        private System.Windows.Forms.TextBox txbMatricula;
+        private System.Windows.Forms.TextBox txbData;
+        private System.Windows.Forms.TextBox txbCodAluno;
     }
 }

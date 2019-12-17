@@ -241,6 +241,38 @@ namespace Funcoes
          }
          return descricao;
       }
+      public static string ConverteGrupo(int grupo)
+      {
+         var cmd = new OleDbCommand("SELECT * FROM tblGrupos WHERE codGrupo = @grupo");
+
+         cmd.Parameters.AddWithValue("@grupo", grupo);
+
+         cmd.Connection = Conexao.connection;
+         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         Conexao.Conectar();
+
+         string descricao = "";
+
+         try
+         {
+            var reader = cmd.ExecuteReader();
+
+            reader.Read();
+            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            descricao = reader["descricaoGrupo"].ToString();
+            
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
+         //Retorna o valor encontrado.
+         return descricao;
+      }
 
 
       /// <summary>

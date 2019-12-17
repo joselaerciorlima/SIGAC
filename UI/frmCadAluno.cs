@@ -1,22 +1,118 @@
 ﻿using Classes;
 using Funcoes;
 using System;
-using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace UI
 {
-   public partial class frmCadAluno : Form
+   public partial class frmCadAluno : frmModelo
    {
       public frmCadAluno()
       {
          InitializeComponent();
       }
-      public string ondeSalvar = "";
+      public void LimpaTela()
+      {
+         txbMatricula.Clear();
+         txbNome.Clear();
+         cobCurso.SelectedIndex = 0;
+         cobTurma.SelectedIndex = 0;
+         txbCodAluno.Clear();
+      }
+      private void frmCadAluno_Load(object sender, EventArgs e)
+      {
+         alteraBotoes(1);
+
+         //Parâmetro necessário para exibir os valores recuperados no controle combobox.
+         cobCurso.DisplayMember = "descricaoCurso";
+         //Busca o método que está dentro da classe 'Ferramentas' e retorna o valor para o DataSource do controle combobox.
+         cobCurso.DataSource = Ferramentas.PreencheComboBoxCurso();
+
+         cobTurma.DisplayMember = "anoTurma";
+         cobTurma.DataSource = Ferramentas.PreencheComboBoxTurma();
+      }
+
+      private void btnNovo_Click(object sender, EventArgs e)
+      {
+         operacao = "novo";
+         alteraBotoes(2);
+      }
+
+      private void btnCancelar_Click(object sender, EventArgs e)
+      {
+         LimpaTela();
+         alteraBotoes(1);
+      }
+
+      private void btnLocalizar_Click(object sender, EventArgs e)
+      {
+         var form = new frmConsultaAluno();
+         form.ShowDialog();
+         //form.Dispose();
+
+         if (form.codigo != "0")
+         {
+            string curso = Ferramentas.ConverteCurso(form.curso);
+
+            string turma = Ferramentas.ConverteTurma(form.turma);
+
+            txbMatricula.Text = form.matricula.ToString();
+            txbNome.Text = form.nome;
+            cobCurso.Text = curso;
+            cobTurma.Text = turma;
+            txbCodAluno.Text = form.codigo;
+
+            alteraBotoes(3);
+         }
+         else
+         {
+            LimpaTela();
+            alteraBotoes(1);
+         }
+         form.Dispose();
+      }
+
+      private void btnEditar_Click(object sender, EventArgs e)
+      {
+         operacao = "alterar";
+         alteraBotoes(2);
+      }
+
+      private void btnExcluir_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            DialogResult d = MessageBox.Show("Deseja excluir o registro?", "Aviso", MessageBoxButtons.YesNo);
+            if (d.ToString() == "Yes")
+            {
+               var cmd = new OleDbCommand("DELETE FROM tblAlunos WHERE codAluno = @codigo");
+
+               cmd.Parameters.AddWithValue("@codigo", txbCodAluno.Text);
+
+               cmd.Connection = Conexao.connection;
+
+               Conexao.Conectar();
+               cmd.ExecuteNonQuery();
+               LimpaTela();
+               alteraBotoes(1);
+
+            }
+         }
+         catch
+         {
+            MessageBox.Show("Impossivel excluir o registro. \n O registro está sendo utilizado em outro local.");
+            alteraBotoes(3);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
+      }
+
       private void btnSalvar_Click(object sender, EventArgs e)
       {
-         if (ondeSalvar == "inserir")
+         if (operacao == "novo")
          {
             //Busca o método que está dentro da classe 'Ferramentas' e passa o parametro com a combobox.
             int curso = Ferramentas.BuscaCodigoCurso(cobCurso.Text);
@@ -26,95 +122,28 @@ namespace UI
             string data = DateTime.Today.ToString();
 
             var aluno = new Cadastrar(txbNome.Text, txbMatricula.Text, curso, turma, data);
+            LimpaTela();
+            alteraBotoes(1);
          }
-
-      }
-
-      private void frmCadAluno_Load(object sender, EventArgs e)
-      {
-         
-
-      }
-
-      private void btnNovo_Click(object sender, EventArgs e)
-      {
-         btnSalvar.Enabled = true;
-         btnNovo.Enabled = false;
-         btnEditar.Enabled = false;
-         btnCancelar.Enabled = true;
-         pnlDados.Enabled = true;
-         ondeSalvar = "inserir";
-      }
-
-      private void btnCancelar_Click(object sender, EventArgs e)
-      {
-         btnSalvar.Enabled = false;
-         btnEditar.Enabled = true;
-         btnExcluir.Enabled = false;
-         btnNovo.Enabled = true;
-         btnCancelar.Enabled = false;
-         pnlDados.Enabled = false;
-         pnlLista.Enabled = false;
-         dgvAluno.Rows.Clear();
-      }
-
-      private void btnEditar_Click(object sender, EventArgs e)
-      {
-         btnSalvar.Enabled = true;
-         btnNovo.Enabled = false;
-         btnCancelar.Enabled = true;
-         pnlDados.Enabled = true;
-         pnlLista.Enabled = true;         
-         ondeSalvar = "atualizar";
-      }
-
-      private void btnPesquisar_Click(object sender, EventArgs e)
-      {
-
-         if (ondeSalvar == "atualizar")
+         else
          {
-            string comando = "SELECT * FROM tblAlunos WHERE matricula LIKE '" + txbFiltro.Text + "%'";
+            int curso = Ferramentas.BuscaCodigoCurso(cobCurso.Text);
 
-            var cmd = new OleDbCommand(comando);
+            int turma = Ferramentas.BuscaCodigoTurma(cobTurma.Text);
 
-            cmd.Connection = Conexao.connection;
+            var data = DateTime.Now.ToString();
 
-            Conexao.Conectar();
+            var aluno = new Atualizar(txbCodAluno.Text, txbNome.Text, txbMatricula.Text, curso, turma, data);
 
-            try
-            {
-               var reader = cmd.ExecuteReader();
-               int i = 0;
-               dgvAluno.Rows.Clear();
-
-               while (reader.Read())
-               {
-                  dgvAluno.Rows.Add();
-                  dgvAluno.Rows[i].Cells["clnMatricula"].Value = reader["matricula"];
-                  dgvAluno.Rows[i].Cells["clnNome"].Value = reader["nome"];
-                  dgvAluno.Rows[i].Cells["clnCurso"].Value = reader["codCurso"];
-                  dgvAluno.Rows[i].Cells["clnTurma"].Value = reader["codTurma"];
-                  i++;
-               }
-            }
-            catch (Exception erro)
-            { MessageBox.Show(erro.Message);}
-            finally
-            { Conexao.Desconectar();}
+            LimpaTela();
+            alteraBotoes(1);
          }
       }
 
-      private void dgvAluno_CellClick(object sender, DataGridViewCellEventArgs e)
+      private void txbMatricula_KeyPress(object sender, KeyPressEventArgs e)
       {
-         txbMatricula.Text = dgvAluno.SelectedCells[0].Value.ToString();
-         txbNome.Text = dgvAluno.SelectedCells[1].Value.ToString();
-         cobCurso.Text = dgvAluno.SelectedCells[2].Value.ToString();
-         cobTurma.Text = dgvAluno.SelectedCells[3].Value.ToString();
-      }
-
-      private void dgvAluno_CellContentClick(object sender, DataGridViewCellEventArgs e)
-      {
-
+         txbMatricula.MaxLength = 10;
+         
       }
    }
 }
