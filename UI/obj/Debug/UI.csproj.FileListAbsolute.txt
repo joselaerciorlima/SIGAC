@@ -21,3 +21,4 @@ C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementa
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.csprojAssemblyReference.cache
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmConsultaAluno.resources
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmConsultaAtividade.resources
+C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmConsultaCertificado.resources

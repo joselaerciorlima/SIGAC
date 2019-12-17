@@ -28,6 +28,7 @@
       /// </summary>
       private void InitializeComponent()
       {
+         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadCertificado));
          this.label2 = new System.Windows.Forms.Label();
          this.label3 = new System.Windows.Forms.Label();
          this.label6 = new System.Windows.Forms.Label();
@@ -40,13 +41,16 @@
          this.txbDescricao = new System.Windows.Forms.TextBox();
          this.txbMatricula = new System.Windows.Forms.TextBox();
          this.txbData = new System.Windows.Forms.TextBox();
+         this.txbCodCertificado = new System.Windows.Forms.TextBox();
          this.txbCodAluno = new System.Windows.Forms.TextBox();
+         this.btnPesquisarAluno = new System.Windows.Forms.Button();
          this.panel1.SuspendLayout();
          this.pnDados.SuspendLayout();
          this.SuspendLayout();
          // 
          // pnDados
          // 
+         this.pnDados.Controls.Add(this.btnPesquisarAluno);
          this.pnDados.Controls.Add(this.txbData);
          this.pnDados.Controls.Add(this.txbMatricula);
          this.pnDados.Controls.Add(this.label2);
@@ -57,9 +61,40 @@
          this.pnDados.Controls.Add(this.label1);
          this.pnDados.Controls.Add(this.cobClassificacao);
          this.pnDados.Controls.Add(this.txbCodAluno);
+         this.pnDados.Controls.Add(this.txbCodCertificado);
          this.pnDados.Controls.Add(this.txbCargaHoraria);
          this.pnDados.Controls.Add(this.txbNome);
          this.pnDados.Controls.Add(this.txbDescricao);
+         this.pnDados.TabIndex = 1;
+         // 
+         // btnNovo
+         // 
+         this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+         // 
+         // btnCancelar
+         // 
+         this.btnCancelar.TabIndex = 5;
+         this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+         // 
+         // btnLocalizar
+         // 
+         this.btnLocalizar.TabIndex = 1;
+         this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
+         // 
+         // btnSalvar
+         // 
+         this.btnSalvar.TabIndex = 4;
+         this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+         // 
+         // btnEditar
+         // 
+         this.btnEditar.TabIndex = 2;
+         this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+         // 
+         // btnExcluir
+         // 
+         this.btnExcluir.TabIndex = 3;
+         this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
          // 
          // label2
          // 
@@ -109,7 +144,7 @@
          // 
          this.label5.AutoSize = true;
          this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label5.Location = new System.Drawing.Point(112, 93);
+         this.label5.Location = new System.Drawing.Point(129, 93);
          this.label5.Margin = new System.Windows.Forms.Padding(3, 15, 10, 3);
          this.label5.Name = "label5";
          this.label5.Size = new System.Drawing.Size(225, 19);
@@ -136,7 +171,7 @@
          this.cobClassificacao.Margin = new System.Windows.Forms.Padding(3, 3, 4, 3);
          this.cobClassificacao.Name = "cobClassificacao";
          this.cobClassificacao.Size = new System.Drawing.Size(486, 26);
-         this.cobClassificacao.TabIndex = 33;
+         this.cobClassificacao.TabIndex = 10;
          // 
          // txbCargaHoraria
          // 
@@ -145,7 +180,7 @@
          this.txbCargaHoraria.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
          this.txbCargaHoraria.Name = "txbCargaHoraria";
          this.txbCargaHoraria.Size = new System.Drawing.Size(122, 25);
-         this.txbCargaHoraria.TabIndex = 34;
+         this.txbCargaHoraria.TabIndex = 11;
          // 
          // txbNome
          // 
@@ -155,25 +190,26 @@
          this.txbNome.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
          this.txbNome.Name = "txbNome";
          this.txbNome.Size = new System.Drawing.Size(455, 25);
-         this.txbNome.TabIndex = 31;
+         this.txbNome.TabIndex = 7;
          // 
          // txbDescricao
          // 
          this.txbDescricao.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txbDescricao.Location = new System.Drawing.Point(116, 118);
+         this.txbDescricao.Location = new System.Drawing.Point(133, 118);
          this.txbDescricao.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
          this.txbDescricao.Name = "txbDescricao";
-         this.txbDescricao.Size = new System.Drawing.Size(529, 25);
-         this.txbDescricao.TabIndex = 32;
+         this.txbDescricao.Size = new System.Drawing.Size(510, 25);
+         this.txbDescricao.TabIndex = 9;
          // 
          // txbMatricula
          // 
+         this.txbMatricula.Enabled = false;
          this.txbMatricula.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.txbMatricula.Location = new System.Drawing.Point(18, 43);
          this.txbMatricula.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
          this.txbMatricula.Name = "txbMatricula";
-         this.txbMatricula.Size = new System.Drawing.Size(156, 25);
-         this.txbMatricula.TabIndex = 42;
+         this.txbMatricula.Size = new System.Drawing.Size(122, 25);
+         this.txbMatricula.TabIndex = 6;
          // 
          // txbData
          // 
@@ -181,17 +217,36 @@
          this.txbData.Location = new System.Drawing.Point(18, 118);
          this.txbData.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
          this.txbData.Name = "txbData";
-         this.txbData.Size = new System.Drawing.Size(80, 25);
-         this.txbData.TabIndex = 42;
+         this.txbData.Size = new System.Drawing.Size(98, 25);
+         this.txbData.TabIndex = 8;
+         // 
+         // txbCodCertificado
+         // 
+         this.txbCodCertificado.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.txbCodCertificado.Location = new System.Drawing.Point(684, 43);
+         this.txbCodCertificado.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
+         this.txbCodCertificado.Name = "txbCodCertificado";
+         this.txbCodCertificado.Size = new System.Drawing.Size(63, 25);
+         this.txbCodCertificado.TabIndex = 34;
          // 
          // txbCodAluno
          // 
          this.txbCodAluno.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txbCodAluno.Location = new System.Drawing.Point(684, 43);
+         this.txbCodAluno.Location = new System.Drawing.Point(684, 87);
          this.txbCodAluno.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
          this.txbCodAluno.Name = "txbCodAluno";
          this.txbCodAluno.Size = new System.Drawing.Size(63, 25);
          this.txbCodAluno.TabIndex = 34;
+         // 
+         // btnPesquisarAluno
+         // 
+         this.btnPesquisarAluno.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisarAluno.Image")));
+         this.btnPesquisarAluno.Location = new System.Drawing.Point(147, 43);
+         this.btnPesquisarAluno.Name = "btnPesquisarAluno";
+         this.btnPesquisarAluno.Size = new System.Drawing.Size(32, 25);
+         this.btnPesquisarAluno.TabIndex = 41;
+         this.btnPesquisarAluno.UseVisualStyleBackColor = true;
+         this.btnPesquisarAluno.Click += new System.EventHandler(this.btnPesquisarAluno_Click);
          // 
          // frmCadCertificado
          // 
@@ -199,6 +254,7 @@
          this.ClientSize = new System.Drawing.Size(784, 561);
          this.Name = "frmCadCertificado";
          this.Text = "Cadastro - Atividade Complementar";
+         this.Load += new System.EventHandler(this.frmCadAtividade_Load);
          this.panel1.ResumeLayout(false);
          this.pnDados.ResumeLayout(false);
          this.pnDados.PerformLayout();
@@ -219,6 +275,8 @@
         private System.Windows.Forms.TextBox txbDescricao;
         private System.Windows.Forms.TextBox txbMatricula;
         private System.Windows.Forms.TextBox txbData;
+        private System.Windows.Forms.TextBox txbCodCertificado;
         private System.Windows.Forms.TextBox txbCodAluno;
-    }
+      private System.Windows.Forms.Button btnPesquisarAluno;
+   }
 }

@@ -84,15 +84,16 @@ namespace Funcoes
       /// <param name="descricao"></param>
       /// <param name="dataCertificado"></param>
       /// <param name="cargaHoraria"></param>
-      public Cadastrar(string matricula, string dataCertificado, string descricao, int atividade, string cargaHoraria, string dataCadastro)
+      public Cadastrar(string matricula, string codAluno, string dataCertificado, string descricao, int atividade, string cargaHoraria, string dataCadastro)
       {
-         var cmd = new OleDbCommand("INSERT INTO tblCertificados (matricula,dataCertificado,descricaoCertificado,codAtividade,cargaHorariaCertificado,dataCadastro) VALUES (@matricula,@dataCertificado,@descricaoCertificado,@codAtividade,@cargaHorariaCertificado,@dataCadastro))");
+         var cmd = new OleDbCommand("INSERT INTO tblCertificados (matricula,codAluno,dataCertificado,descricaoCertificado,codAtividade,cargaHorariaCertificado,dataCadastro) VALUES (@matricula,@codAluno,@data,@descricao,@codAtividade,@carga,@dataCadastro)");
 
          cmd.Parameters.AddWithValue("@matricula", matricula);
-         cmd.Parameters.AddWithValue("@dataCertificado", dataCertificado);
-         cmd.Parameters.AddWithValue("@descricaoCertificado", descricao);
+         cmd.Parameters.AddWithValue("@codAluno", codAluno);
+         cmd.Parameters.AddWithValue("@data", dataCertificado);
+         cmd.Parameters.AddWithValue("@descricao", descricao);
          cmd.Parameters.AddWithValue("@codAtividade", atividade);
-         cmd.Parameters.AddWithValue("@cargaHorariaCertificado", cargaHoraria);
+         cmd.Parameters.AddWithValue("@carga", cargaHoraria);
          cmd.Parameters.AddWithValue("@dataCadastro", dataCadastro);
 
          cmd.Connection = Conexao.connection;

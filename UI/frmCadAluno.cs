@@ -51,7 +51,7 @@ namespace UI
          form.ShowDialog();
          //form.Dispose();
 
-         if (form.codigo != "0")
+         if (form.codigo != "")
          {
             string curso = Ferramentas.ConverteCurso(form.curso);
 

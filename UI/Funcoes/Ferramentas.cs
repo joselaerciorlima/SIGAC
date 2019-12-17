@@ -89,7 +89,7 @@ namespace Funcoes
          //Chama o método de conexão que está dentro da classe 'Conexao'.
          Conexao.Conectar();
 
-         int codigo=0;
+         int codigo = 0;
 
          try
          {
@@ -99,7 +99,7 @@ namespace Funcoes
             //Armazena o valor encontrado pelo cmd dentro da variavel.
             codigo = (int)reader["codGrupo"];
             //Retorna o valor encontrado.
-            
+
          }
          catch (Exception erro)
          {
@@ -111,7 +111,7 @@ namespace Funcoes
          }
          return codigo;
       }
-      
+
       public static int BuscaCodigoPeriodo(string periodo)
       {
          var cmd = new OleDbCommand("SELECT * FROM tblPeriodos WHERE descricaoPeriodo = @periodo");
@@ -122,7 +122,7 @@ namespace Funcoes
          //Chama o método de conexão que está dentro da classe 'Conexao'.
          Conexao.Conectar();
 
-         int codigo=0;
+         int codigo = 0;
 
          try
          {
@@ -132,7 +132,7 @@ namespace Funcoes
             //Armazena o valor encontrado pelo cmd dentro da variavel.
             codigo = (int)reader["codPeriodo"];
             //Retorna o valor encontrado.
-            
+
          }
          catch (Exception erro)
          {
@@ -143,8 +143,8 @@ namespace Funcoes
             Conexao.Desconectar();
          }
          return codigo;
-      } 
-      
+      }
+
       public static int BuscaCodigoAtividade(string atividade)
       {
          var cmd = new OleDbCommand("SELECT * FROM tblAtividades WHERE descricaoAtividade = @atividade");
@@ -155,7 +155,7 @@ namespace Funcoes
          //Chama o método de conexão que está dentro da classe 'Conexao'.
          Conexao.Conectar();
 
-         int codigo=0;
+         int codigo = 0;
 
          try
          {
@@ -164,8 +164,37 @@ namespace Funcoes
             reader.Read();
             //Armazena o valor encontrado pelo cmd dentro da variavel.
             codigo = (int)reader["codAtividade"];
-            //Retorna o valor encontrado.
-            
+
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
+         return codigo;
+      }
+      public static int BuscaCodigoAluno(string matricula)
+      {
+         var cmd = new OleDbCommand("SELECT * FROM tblAlunos WHERE matricula = @matricula");
+
+         cmd.Parameters.AddWithValue("@matricula", matricula);
+
+         cmd.Connection = Conexao.connection;
+         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         Conexao.Conectar();
+
+         int codigo = 0;
+
+         try
+         {
+            var reader = cmd.ExecuteReader();
+
+            reader.Read();
+            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            codigo = (int)reader["codAluno"];
          }
          catch (Exception erro)
          {
@@ -260,7 +289,71 @@ namespace Funcoes
             reader.Read();
             //Armazena o valor encontrado pelo cmd dentro da variavel.
             descricao = reader["descricaoGrupo"].ToString();
-            
+
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
+         //Retorna o valor encontrado.
+         return descricao;
+      }
+      public static string ConverteAtividade(int atividade)
+      {
+         var cmd = new OleDbCommand("SELECT * FROM tblAtividades WHERE codAtividade = @atividade");
+
+         cmd.Parameters.AddWithValue("@atividade", atividade);
+
+         cmd.Connection = Conexao.connection;
+         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         Conexao.Conectar();
+
+         string descricao = "";
+
+         try
+         {
+            var reader = cmd.ExecuteReader();
+
+            reader.Read();
+            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            descricao = reader["descricaoAtividade"].ToString();
+
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
+         //Retorna o valor encontrado.
+         return descricao;
+      }
+      public static string ConverteAluno(int aluno)
+      {
+         var cmd = new OleDbCommand("SELECT * FROM tblAlunos WHERE codAluno = @aluno");
+
+         cmd.Parameters.AddWithValue("@aluno", aluno);
+
+         cmd.Connection = Conexao.connection;
+         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         Conexao.Conectar();
+
+         string descricao = "";
+
+         try
+         {
+            var reader = cmd.ExecuteReader();
+
+            reader.Read();
+            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            descricao = reader["nome"].ToString();
+
          }
          catch (Exception erro)
          {
@@ -297,7 +390,6 @@ namespace Funcoes
          //Retorna os valores encontrados.
          return dt;
       }
-      
       public static DataTable PreencheComboBoxTurma()
       {
          var cmd = new OleDbCommand("SELECT * FROM tblAnoTurmas");
@@ -316,7 +408,6 @@ namespace Funcoes
 
          return dt;
       }
-      
       public static DataTable PreencheComboBoxGrupo()
       {
          var cmd = new OleDbCommand("SELECT * FROM tblGrupos");
@@ -353,7 +444,6 @@ namespace Funcoes
 
          return dt;
       }
-      
       public static DataTable PreencheComboBoxAtividade()
       {
          var cmd = new OleDbCommand("SELECT * FROM tblAtividades");

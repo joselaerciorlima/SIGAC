@@ -40,13 +40,43 @@ namespace Funcoes
             Conexao.Desconectar();
          }
       }
-      public Atualizar(string codigo, string descricao, string cargaHoraia, int grupo, string dataAlteracao)
+      public Atualizar(string codigo, string descricao, string cargaHoraria, int grupo, string dataAlteracao)
       {
          var cmd = new OleDbCommand("UPDATE tblAtividades SET codGrupo = @grupo, descricaoAtividade = @descricao, cargaHorariaAtividade = @carga, ultimaAlteracao = @alteracao WHERE codAtividade LIKE " + codigo);
 
          cmd.Parameters.AddWithValue("@grupo", grupo);
          cmd.Parameters.AddWithValue("@decricao", descricao);
-         cmd.Parameters.AddWithValue("@carga", cargaHoraia);
+         cmd.Parameters.AddWithValue("@carga", cargaHoraria);
+         cmd.Parameters.AddWithValue("@alteracao", dataAlteracao);
+
+         cmd.Connection = Conexao.connection;
+         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         Conexao.Conectar();
+
+         try
+         {
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Cadastro atualizado com sucesso!");
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
+      }
+      public Atualizar(string codCertificado, string matricula,string codAluno,string descricao, string cargaHoraria,string dataCertificado, int codClassificacao, string dataAlteracao)
+      {
+         var cmd = new OleDbCommand("UPDATE tblCertificados SET codAluno = @aluno, descricaoCertificado = @descricao, cargaHorariaCertificado = @carga, matricula = @matricula, codAtividade = @classificacao, dataCertificado = @data, ultimaAlteracao = @alteracao WHERE codCertificado LIKE " + codCertificado);
+
+         cmd.Parameters.AddWithValue("@aluno", codAluno);
+         cmd.Parameters.AddWithValue("@decricao", descricao);
+         cmd.Parameters.AddWithValue("@carga", cargaHoraria);
+         cmd.Parameters.AddWithValue("@matricula", matricula);
+         cmd.Parameters.AddWithValue("@classificacao", codClassificacao);
+         cmd.Parameters.AddWithValue("@data", dataCertificado);
          cmd.Parameters.AddWithValue("@alteracao", dataAlteracao);
 
          cmd.Connection = Conexao.connection;
