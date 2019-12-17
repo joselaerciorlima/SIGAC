@@ -177,6 +177,71 @@ namespace Funcoes
          }
          return codigo;
       }
+      public static string ConverteCurso(int curso)
+      {
+         var cmd = new OleDbCommand("SELECT * FROM tblCursos WHERE codCurso = @curso");
+
+         cmd.Parameters.AddWithValue("@curso", curso);
+
+         cmd.Connection = Conexao.connection;
+         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         Conexao.Conectar();
+
+         string descricao = "";
+
+         try
+         {
+            var reader = cmd.ExecuteReader();
+
+            reader.Read();
+            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            descricao = reader["descricaoCurso"].ToString();
+            //Retorna o valor encontrado.
+
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
+         return descricao;
+      }
+      public static string ConverteTurma(int anoTurma)
+      {
+         var cmd = new OleDbCommand("SELECT * FROM tblAnoTurmas WHERE codTurma = @turma");
+
+         cmd.Parameters.AddWithValue("@turma", anoTurma);
+
+         cmd.Connection = Conexao.connection;
+         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         Conexao.Conectar();
+
+         string descricao = "";
+
+         try
+         {
+            var reader = cmd.ExecuteReader();
+
+            reader.Read();
+            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            descricao = reader["anoTurma"].ToString();
+            //Retorna o valor encontrado.
+
+         }
+         catch (Exception erro)
+         {
+            MessageBox.Show(erro.Message);
+         }
+         finally
+         {
+            Conexao.Desconectar();
+         }
+         return descricao;
+      }
+
 
       /// <summary>
       /// Método que recupera os dados da tabela no banco de dados e armazena em um DataTable.

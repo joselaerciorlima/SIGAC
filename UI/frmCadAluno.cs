@@ -32,13 +32,7 @@ namespace UI
 
       private void frmCadAluno_Load(object sender, EventArgs e)
       {
-         //Parâmetro necessário para exibir os valores recuperados no controle combobox.
-         cobCurso.DisplayMember = "descricaoCurso";
-         //Busca o método que está dentro da classe 'Ferramentas' e retorna o valor para o DataSource do controle combobox.
-         cobCurso.DataSource = Ferramentas.PreencheComboBoxCurso();
-
-         cobTurma.DisplayMember = "anoTurma";
-         cobTurma.DataSource = Ferramentas.PreencheComboBoxTurma();
+         
 
       }
 
@@ -116,6 +110,11 @@ namespace UI
          txbNome.Text = dgvAluno.SelectedCells[1].Value.ToString();
          cobCurso.Text = dgvAluno.SelectedCells[2].Value.ToString();
          cobTurma.Text = dgvAluno.SelectedCells[3].Value.ToString();
+      }
+
+      private void dgvAluno_CellContentClick(object sender, DataGridViewCellEventArgs e)
+      {
+
       }
    }
 }

@@ -18,3 +18,6 @@ C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementa
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmRelCertificadoAluno.resources
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmRelResumoAluno.resources
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmVisualizar.resources
+C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmModelo.resources
+C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmCadAluno1.resources
+C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\Sistema de Gestão das Atividades Complementares\UI\obj\Debug\UI.frmConsulaAluno.resources

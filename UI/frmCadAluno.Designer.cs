@@ -51,14 +51,14 @@
          this.txbNome = new System.Windows.Forms.TextBox();
          this.txbMatricula = new System.Windows.Forms.TextBox();
          this.pnlLista = new System.Windows.Forms.Panel();
+         this.btnPesquisar = new System.Windows.Forms.Button();
+         this.label5 = new System.Windows.Forms.Label();
+         this.txbFiltro = new System.Windows.Forms.TextBox();
          this.dgvAluno = new System.Windows.Forms.DataGridView();
          this.clnMatricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.clnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.clnCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.clnTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-         this.btnPesquisar = new System.Windows.Forms.Button();
-         this.label5 = new System.Windows.Forms.Label();
-         this.txbFiltro = new System.Windows.Forms.TextBox();
          this.toolStrip1.SuspendLayout();
          this.panel1.SuspendLayout();
          this.pnlDados.SuspendLayout();
@@ -269,6 +269,39 @@
          this.pnlLista.Size = new System.Drawing.Size(784, 370);
          this.pnlLista.TabIndex = 0;
          // 
+         // btnPesquisar
+         // 
+         this.btnPesquisar.AutoSize = true;
+         this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
+         this.btnPesquisar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.btnPesquisar.Location = new System.Drawing.Point(295, 6);
+         this.btnPesquisar.Name = "btnPesquisar";
+         this.btnPesquisar.Size = new System.Drawing.Size(61, 29);
+         this.btnPesquisar.TabIndex = 30;
+         this.btnPesquisar.Text = "Filtrar";
+         this.btnPesquisar.UseVisualStyleBackColor = true;
+         this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+         // 
+         // label5
+         // 
+         this.label5.AutoSize = true;
+         this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label5.Location = new System.Drawing.Point(20, 11);
+         this.label5.Margin = new System.Windows.Forms.Padding(3, 15, 10, 3);
+         this.label5.Name = "label5";
+         this.label5.Size = new System.Drawing.Size(106, 19);
+         this.label5.TabIndex = 29;
+         this.label5.Text = "MATRÍCULA";
+         // 
+         // txbFiltro
+         // 
+         this.txbFiltro.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.txbFiltro.Location = new System.Drawing.Point(134, 8);
+         this.txbFiltro.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
+         this.txbFiltro.Name = "txbFiltro";
+         this.txbFiltro.Size = new System.Drawing.Size(150, 25);
+         this.txbFiltro.TabIndex = 28;
+         // 
          // dgvAluno
          // 
          this.dgvAluno.AllowUserToAddRows = false;
@@ -313,6 +346,7 @@
          this.dgvAluno.TabIndex = 26;
          this.dgvAluno.TabStop = false;
          this.dgvAluno.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAluno_CellClick);
+         this.dgvAluno.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAluno_CellContentClick);
          // 
          // clnMatricula
          // 
@@ -343,39 +377,6 @@
          this.clnTurma.HeaderText = "TURMA";
          this.clnTurma.Name = "clnTurma";
          this.clnTurma.ReadOnly = true;
-         // 
-         // btnPesquisar
-         // 
-         this.btnPesquisar.AutoSize = true;
-         this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
-         this.btnPesquisar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.btnPesquisar.Location = new System.Drawing.Point(295, 6);
-         this.btnPesquisar.Name = "btnPesquisar";
-         this.btnPesquisar.Size = new System.Drawing.Size(61, 29);
-         this.btnPesquisar.TabIndex = 30;
-         this.btnPesquisar.Text = "Filtrar";
-         this.btnPesquisar.UseVisualStyleBackColor = true;
-         this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-         // 
-         // label5
-         // 
-         this.label5.AutoSize = true;
-         this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label5.Location = new System.Drawing.Point(20, 11);
-         this.label5.Margin = new System.Windows.Forms.Padding(3, 15, 10, 3);
-         this.label5.Name = "label5";
-         this.label5.Size = new System.Drawing.Size(106, 19);
-         this.label5.TabIndex = 29;
-         this.label5.Text = "MATRÍCULA";
-         // 
-         // txbFiltro
-         // 
-         this.txbFiltro.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txbFiltro.Location = new System.Drawing.Point(134, 8);
-         this.txbFiltro.Margin = new System.Windows.Forms.Padding(15, 3, 4, 3);
-         this.txbFiltro.Name = "txbFiltro";
-         this.txbFiltro.Size = new System.Drawing.Size(150, 25);
-         this.txbFiltro.TabIndex = 28;
          // 
          // frmCadAluno
          // 
