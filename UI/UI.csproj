@@ -33,21 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,52 +49,52 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Conexao.cs" />
-    <Compile Include="frmCadAtividade.cs">
+    <Compile Include="Forms\frmCadAtividade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCadAtividade.Designer.cs">
+    <Compile Include="Forms\frmCadAtividade.Designer.cs">
       <DependentUpon>frmCadAtividade.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCadCurso.cs">
+    <Compile Include="Forms\frmCadCurso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCadCurso.Designer.cs">
+    <Compile Include="Forms\frmCadCurso.Designer.cs">
       <DependentUpon>frmCadCurso.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCadCertificado.cs">
+    <Compile Include="Forms\frmCadCertificado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCadCertificado.Designer.cs">
+    <Compile Include="Forms\frmCadCertificado.Designer.cs">
       <DependentUpon>frmCadCertificado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCadAluno.cs">
+    <Compile Include="Forms\frmCadAluno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCadAluno.Designer.cs">
+    <Compile Include="Forms\frmCadAluno.Designer.cs">
       <DependentUpon>frmCadAluno.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaAluno.cs">
+    <Compile Include="Forms\frmConsultaAluno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaAluno.Designer.cs">
+    <Compile Include="Forms\frmConsultaAluno.Designer.cs">
       <DependentUpon>frmConsultaAluno.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaAtividade.cs">
+    <Compile Include="Forms\frmConsultaAtividade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaAtividade.Designer.cs">
+    <Compile Include="Forms\frmConsultaAtividade.Designer.cs">
       <DependentUpon>frmConsultaAtividade.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaCertificado.cs">
+    <Compile Include="Forms\frmConsultaCertificado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaCertificado.Designer.cs">
+    <Compile Include="Forms\frmConsultaCertificado.Designer.cs">
       <DependentUpon>frmConsultaCertificado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaCurso.cs">
+    <Compile Include="Forms\frmConsultaCurso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaCurso.Designer.cs">
+    <Compile Include="Forms\frmConsultaCurso.Designer.cs">
       <DependentUpon>frmConsultaCurso.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcoes\Atualizar.cs" />
@@ -150,34 +139,34 @@
     <Compile Include="Funcoes\Localizar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Relatorios\frmRelatorio.cs">
+    <Compile Include="Forms\frmRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Relatorios\frmRelatorio.Designer.cs">
+    <Compile Include="Forms\frmRelatorio.Designer.cs">
       <DependentUpon>frmRelatorio.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmCadAtividade.resx">
+    <EmbeddedResource Include="Forms\frmCadAtividade.resx">
       <DependentUpon>frmCadAtividade.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCadCurso.resx">
+    <EmbeddedResource Include="Forms\frmCadCurso.resx">
       <DependentUpon>frmCadCurso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCadCertificado.resx">
+    <EmbeddedResource Include="Forms\frmCadCertificado.resx">
       <DependentUpon>frmCadCertificado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCadAluno.resx">
+    <EmbeddedResource Include="Forms\frmCadAluno.resx">
       <DependentUpon>frmCadAluno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaAluno.resx">
+    <EmbeddedResource Include="Forms\frmConsultaAluno.resx">
       <DependentUpon>frmConsultaAluno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaAtividade.resx">
+    <EmbeddedResource Include="Forms\frmConsultaAtividade.resx">
       <DependentUpon>frmConsultaAtividade.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaCertificado.resx">
+    <EmbeddedResource Include="Forms\frmConsultaCertificado.resx">
       <DependentUpon>frmConsultaCertificado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaCurso.resx">
+    <EmbeddedResource Include="Forms\frmConsultaCurso.resx">
       <DependentUpon>frmConsultaCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modelo\frmModelo.resx">
@@ -207,10 +196,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Relatorios\frmRelatorio.resx">
+    <EmbeddedResource Include="Forms\frmRelatorio.resx">
       <DependentUpon>frmRelatorio.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="Properties\DataSources\frmCadAluno.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -235,6 +224,11 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Relatorios\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
