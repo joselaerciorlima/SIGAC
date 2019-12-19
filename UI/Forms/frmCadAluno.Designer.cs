@@ -53,10 +53,6 @@
          this.pnDados.Controls.Add(this.txbCodAluno);
          this.pnDados.Controls.Add(this.txbMatricula);
          // 
-         // panel2
-         // 
-         this.panel2.BackColor = System.Drawing.SystemColors.Control;
-         // 
          // btnNovo
          // 
          this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
@@ -183,6 +179,7 @@
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.ClientSize = new System.Drawing.Size(784, 561);
          this.Name = "frmCadAluno";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
          this.Text = "Cadastro - Aluno";
          this.Load += new System.EventHandler(this.frmCadAluno_Load);
          this.panel1.ResumeLayout(false);

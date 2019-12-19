@@ -145,5 +145,10 @@ namespace UI
          txbMatricula.MaxLength = 10;
          
       }
-   }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+         Close();
+        }
+    }
 }

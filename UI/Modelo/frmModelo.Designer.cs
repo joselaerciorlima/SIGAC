@@ -38,13 +38,8 @@
          this.btnEditar = new System.Windows.Forms.Button();
          this.btnExcluir = new System.Windows.Forms.Button();
          this.pnDados = new System.Windows.Forms.Panel();
-         this.panel2 = new System.Windows.Forms.Panel();
-         this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-         this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
          this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
          this.panel1.SuspendLayout();
-         this.panel2.SuspendLayout();
-         this.statusStrip1.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
          this.SuspendLayout();
          // 
@@ -153,35 +148,8 @@
          this.pnDados.Dock = System.Windows.Forms.DockStyle.Fill;
          this.pnDados.Location = new System.Drawing.Point(0, 52);
          this.pnDados.Name = "pnDados";
-         this.pnDados.Size = new System.Drawing.Size(784, 479);
+         this.pnDados.Size = new System.Drawing.Size(784, 509);
          this.pnDados.TabIndex = 2;
-         // 
-         // panel2
-         // 
-         this.panel2.BackColor = System.Drawing.Color.Lime;
-         this.panel2.Controls.Add(this.statusStrip1);
-         this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-         this.panel2.Location = new System.Drawing.Point(0, 531);
-         this.panel2.Name = "panel2";
-         this.panel2.Size = new System.Drawing.Size(784, 30);
-         this.panel2.TabIndex = 1;
-         // 
-         // statusStrip1
-         // 
-         this.statusStrip1.BackColor = System.Drawing.SystemColors.Control;
-         this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar1});
-         this.statusStrip1.Location = new System.Drawing.Point(0, 0);
-         this.statusStrip1.Name = "statusStrip1";
-         this.statusStrip1.Size = new System.Drawing.Size(784, 30);
-         this.statusStrip1.TabIndex = 0;
-         this.statusStrip1.Text = "statusStrip1";
-         // 
-         // toolStripProgressBar1
-         // 
-         this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-         this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 24);
          // 
          // frmModelo
          // 
@@ -189,7 +157,6 @@
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(784, 561);
          this.Controls.Add(this.pnDados);
-         this.Controls.Add(this.panel2);
          this.Controls.Add(this.panel1);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
          this.MaximizeBox = false;
@@ -198,10 +165,6 @@
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "frmModelo";
          this.panel1.ResumeLayout(false);
-         this.panel2.ResumeLayout(false);
-         this.panel2.PerformLayout();
-         this.statusStrip1.ResumeLayout(false);
-         this.statusStrip1.PerformLayout();
          ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
          this.ResumeLayout(false);
 
@@ -211,9 +174,6 @@
 
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Panel pnDados;
-        protected System.Windows.Forms.Panel panel2;
-        protected System.Windows.Forms.StatusStrip statusStrip1;
-        protected System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.BindingSource bindingSource1;
         protected System.Windows.Forms.Button btnNovo;
         protected System.Windows.Forms.Button btnCancelar;
