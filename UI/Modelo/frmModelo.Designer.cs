@@ -28,7 +28,6 @@
       /// </summary>
       private void InitializeComponent()
       {
-         this.components = new System.ComponentModel.Container();
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModelo));
          this.panel1 = new System.Windows.Forms.Panel();
          this.btnNovo = new System.Windows.Forms.Button();
@@ -38,9 +37,7 @@
          this.btnEditar = new System.Windows.Forms.Button();
          this.btnExcluir = new System.Windows.Forms.Button();
          this.pnDados = new System.Windows.Forms.Panel();
-         this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
          this.panel1.SuspendLayout();
-         ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
          this.SuspendLayout();
          // 
          // panel1
@@ -165,7 +162,6 @@
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "frmModelo";
          this.panel1.ResumeLayout(false);
-         ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
          this.ResumeLayout(false);
 
       }
@@ -174,7 +170,6 @@
 
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Panel pnDados;
-        private System.Windows.Forms.BindingSource bindingSource1;
         protected System.Windows.Forms.Button btnNovo;
         protected System.Windows.Forms.Button btnCancelar;
         protected System.Windows.Forms.Button btnLocalizar;

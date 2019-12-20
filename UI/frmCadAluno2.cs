@@ -1,23 +1,19 @@
-﻿using Classes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Modelo
+namespace UI
 {
-   public partial class frmModelo2 : Form
+   public partial class frmCadAluno2 : Modelo.frmModelo2
    {
-      public frmModelo2()
+      public frmCadAluno2()
       {
          InitializeComponent();
+         
       }
-      
    }
 }
