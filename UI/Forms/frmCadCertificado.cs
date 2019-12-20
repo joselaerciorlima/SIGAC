@@ -163,5 +163,9 @@ namespace UI
 
          form.Dispose();
       }
+      private void btnFecharForm_Click(object sender, EventArgs e)
+      {
+         Close();
+      }
    }
 }

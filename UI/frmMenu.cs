@@ -114,51 +114,36 @@ namespace UI
 
       private void btnAluno_Click(object sender, EventArgs e)
       {
-         openChildForm(new frmCadAluno2());
-         panelBotoes.Visible = true;
-         alteraBotoes(1);
-
-
+         openChildForm(new frmCadAluno());
+         
          hideSubMenu();
       }
 
       private void btnAtividade_Click(object sender, EventArgs e)
       {
-         openChildForm(new frmModelo2());
-         panelBotoes.Visible = true;
-         //..
-         //your codes
-         //..
+         openChildForm(new frmCadAtividade());
+         
          hideSubMenu();
       }
 
       private void btnCertificado_Click(object sender, EventArgs e)
       {
-         openChildForm(new frmModelo2());
-         panelBotoes.Visible = true;
-         //..
-         //your codes
-         //..
+         openChildForm(new frmCadCertificado());
+         
          hideSubMenu();
       }
 
       private void btnCurso_Click(object sender, EventArgs e)
       {
-         openChildForm(new frmModelo2());
-         panelBotoes.Visible = true;
-         //..
-         //your codes
-         //..
+         openChildForm(new frmCadCurso());
+         
          hideSubMenu();
       }
 
       private void btnUsuario_Click(object sender, EventArgs e)
       {
-         openChildForm(new frmModelo2());
-         panelBotoes.Visible = true;
-         //..
-         //your codes
-         //..
+         openChildForm(new frmModelo());
+         
          hideSubMenu();
       }
 
@@ -166,63 +151,6 @@ namespace UI
       {
          showSubMenu(panelRelSubMenu);
       }
-      public void alteraBotoes(int op)
-      {
-         panelChildForm.Enabled = false;
-         btnNovo.Enabled = false;
-         btnEditar.Enabled = false;
-         btnLocalizar.Enabled = false;
-         btnSalvar.Enabled = false;
-         btnCancelar.Enabled = false;
-         btnExcluir.Enabled = false;
-
-         switch (op)
-         {
-            case 1:
-               btnNovo.Enabled = true;
-               btnLocalizar.Enabled = true;
-               break;
-            case 2:
-               panelChildForm.Enabled = true;
-               btnSalvar.Enabled = true;
-               btnCancelar.Enabled = true;
-               break;
-            case 3:
-               btnEditar.Enabled = true;
-               btnExcluir.Enabled = true;
-               btnCancelar.Enabled = true;
-               break;
-         }
-      }
-
-      private void btnNovo_Click(object sender, EventArgs e)
-      {
-         operacao = "novo";
-         alteraBotoes(2);
-         
-      }
-
-      private void btnSalvar_Click(object sender, EventArgs e)
-      {
-         switch (activeForm.Name)
-         {
-            case "frmCadAluno2":
-               operacao = "novo";
-               break;
-            case "frmCadAtividade2":
-               break;
-            case "frmCadCertificado2":
-               break;
-            case "frmCadCurso2":
-               break;
-         }
-      }
-
-      private void btnCancelar_Click(object sender, EventArgs e)
-      {
-         panelBotoes.Visible = false;
-
-         activeForm.Close();
-      }
+      
    }
 }

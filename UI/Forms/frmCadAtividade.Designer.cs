@@ -51,27 +51,52 @@
          // 
          // btnNovo
          // 
+         this.btnNovo.FlatAppearance.BorderSize = 0;
+         this.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+         this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
          this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
          // 
          // btnCancelar
          // 
+         this.btnCancelar.FlatAppearance.BorderSize = 0;
+         this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+         this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
          this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
          // 
          // btnLocalizar
          // 
+         this.btnLocalizar.FlatAppearance.BorderSize = 0;
+         this.btnLocalizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+         this.btnLocalizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
          this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
          // 
          // btnSalvar
          // 
+         this.btnSalvar.FlatAppearance.BorderSize = 0;
+         this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+         this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
          this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
          // 
          // btnEditar
          // 
+         this.btnEditar.FlatAppearance.BorderSize = 0;
+         this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+         this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
          this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
          // 
          // btnExcluir
          // 
+         this.btnExcluir.FlatAppearance.BorderSize = 0;
+         this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+         this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
          this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+         // 
+         // btnFecharForm
+         // 
+         this.btnFecharForm.FlatAppearance.BorderSize = 0;
+         this.btnFecharForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+         this.btnFecharForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+         this.btnFecharForm.Click += new System.EventHandler(this.btnFecharForm_Click);
          // 
          // label2
          // 

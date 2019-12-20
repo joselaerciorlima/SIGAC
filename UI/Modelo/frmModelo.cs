@@ -18,6 +18,7 @@ namespace UI
          btnSalvar.Enabled = false;
          btnCancelar.Enabled = false;
          btnExcluir.Enabled = false;
+         btnFecharForm.Enabled = true;
 
          switch (op)
          {

@@ -150,5 +150,10 @@ namespace UI
         {
          Close();
         }
-    }
+
+      private void btnFecharForm_Click(object sender, EventArgs e)
+      {
+         Close();
+      }
+   }
 }

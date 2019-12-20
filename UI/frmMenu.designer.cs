@@ -490,7 +490,7 @@
          this.btnNovo.Size = new System.Drawing.Size(55, 58);
          this.btnNovo.Text = "Novo";
          this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-         this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+        
          // 
          // toolStripButton13
          // 
@@ -591,7 +591,7 @@
          this.btnCancelar.Size = new System.Drawing.Size(85, 58);
          this.btnCancelar.Text = "Cancelar";
          this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-         this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+         
          // 
          // toolStripButton8
          // 
@@ -616,7 +616,7 @@
          this.btnSalvar.Size = new System.Drawing.Size(67, 58);
          this.btnSalvar.Text = "Salvar";
          this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-         this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+         
          // 
          // frmMenu
          // 

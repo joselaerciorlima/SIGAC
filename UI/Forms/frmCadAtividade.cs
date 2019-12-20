@@ -128,5 +128,9 @@ namespace UI
          }
       }
 
-   }
+        private void btnFecharForm_Click(object sender, EventArgs e)
+        {
+         this.Close();
+        }
+    }
 }

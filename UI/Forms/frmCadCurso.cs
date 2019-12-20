@@ -124,5 +124,9 @@ namespace UI
             alteraBotoes(1);
          }
       }
+      private void btnFecharForm_Click(object sender, EventArgs e)
+      {
+         Close();
+      }
    }
 }
