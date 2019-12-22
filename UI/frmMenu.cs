@@ -1,4 +1,4 @@
-﻿using Classes;
+﻿using Funcoes;
 using Modelo;
 using System;
 using System.Drawing;
@@ -66,27 +66,26 @@ namespace UI
 
          activeForm = childForm;
 
-         //panelBotoes.BackColor = ThemeColor.ChangeColorBrightness(color, -0.5);
          //ThemeColor.PrimaryColor = color;
          //ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.5);
 
 
          //childForm.BackColor = color;
          childForm.TopLevel = false;
-         childForm.FormBorderStyle = FormBorderStyle.None;
+         //childForm.FormBorderStyle = FormBorderStyle.None;
+         //childForm.FormBorderStyle = FormBorderStyle.FixedSingle;
+         childForm.Width = 800;
+         childForm.Height = 600;
+         
          childForm.Dock = DockStyle.Fill;
          panelChildForm.Controls.Add(childForm);
-         panelChildForm.Tag = childForm;
-         childForm.BringToFront();
+         //panelChildForm.Tag = childForm;
+         
+         //childForm.BringToFront();
          childForm.Show();
+
       }
 
-      private void btnCloseFormFilho_Click(object sender, EventArgs e)
-      {
-         panelBotoes.Visible = false;
-
-         activeForm.Close();
-      }
 
       //Método que sobrescreve o método que preenche a cor do formulário. Neste caso, ele preenche com um gradiente de dois tons de verde.
       //protected override void OnPaintBackground(PaintEventArgs e)
@@ -115,7 +114,8 @@ namespace UI
       private void btnAluno_Click(object sender, EventArgs e)
       {
          openChildForm(new frmCadAluno());
-         
+         label2.Text = activeForm.Width.ToString() + " - " + activeForm.Height.ToString();
+
          hideSubMenu();
       }
 
@@ -151,6 +151,16 @@ namespace UI
       {
          showSubMenu(panelRelSubMenu);
       }
-      
+
+      private void frmMenu_Load(object sender, EventArgs e)
+      {
+         //label2.Text = Width.ToString() + " - " + Height.ToString();
+         
+      }
+
+      private void frmMenu_Resize(object sender, EventArgs e)
+      {
+         label2.Text = panelChildForm.Width.ToString() + " - " + panelChildForm.Height.ToString();
+      }
    }
 }

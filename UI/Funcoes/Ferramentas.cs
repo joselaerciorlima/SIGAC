@@ -1,4 +1,4 @@
-﻿using Classes;
+﻿using DataBase;
 using System;
 using System.Data;
 using System.Data.OleDb;
@@ -8,11 +8,8 @@ namespace Funcoes
 {
    public class Ferramentas
    {
-      /// <summary>
-      /// Método publico que faz a busca no banco de dados e retorna o código do valor selecionado na combobox.
-      /// </summary>
-      /// <param name="curso"></param>
-      /// <returns></returns>
+      //================ Métodos para localizar =================
+      //=========================================================
       public static int BuscaCodigoCurso(string curso)
       {
          var cmd = new OleDbCommand("SELECT * FROM tblCursos WHERE descricaoCurso = @curso");
@@ -20,7 +17,7 @@ namespace Funcoes
          cmd.Parameters.AddWithValue("@curso", curso);
 
          cmd.Connection = Conexao.connection;
-         //Chama o método de conexão que está dentro da classe 'Conexao'.
+        
          Conexao.Conectar();
 
          int codigo = 0;
@@ -30,10 +27,9 @@ namespace Funcoes
             var reader = cmd.ExecuteReader();
 
             reader.Read();
-            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            
             codigo = (int)reader["codCurso"];
-            //Retorna o valor encontrado.
-
+        
          }
          catch (Exception erro)
          {
@@ -45,7 +41,7 @@ namespace Funcoes
          }
          return codigo;
       }
-
+      //=========================================================
       public static int BuscaCodigoTurma(string anoTurma)
       {
          var cmd = new OleDbCommand("SELECT * FROM tblAnoTurmas WHERE anoTurma = @turma");
@@ -53,7 +49,7 @@ namespace Funcoes
          cmd.Parameters.AddWithValue("@turma", anoTurma);
 
          cmd.Connection = Conexao.connection;
-         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         
          Conexao.Conectar();
 
          int codigo = 0;
@@ -63,9 +59,8 @@ namespace Funcoes
             var reader = cmd.ExecuteReader();
 
             reader.Read();
-            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            
             codigo = (int)reader["codTurma"];
-            //Retorna o valor encontrado.
 
          }
          catch (Exception erro)
@@ -78,7 +73,7 @@ namespace Funcoes
          }
          return codigo;
       }
-
+      //=========================================================
       public static int BuscaCodigoGrupo(string grupo)
       {
          var cmd = new OleDbCommand("SELECT * FROM tblGrupos WHERE descricaoGrupo = @grupo");
@@ -86,7 +81,7 @@ namespace Funcoes
          cmd.Parameters.AddWithValue("@grupo", grupo);
 
          cmd.Connection = Conexao.connection;
-         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         
          Conexao.Conectar();
 
          int codigo = 0;
@@ -96,9 +91,8 @@ namespace Funcoes
             var reader = cmd.ExecuteReader();
 
             reader.Read();
-            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            
             codigo = (int)reader["codGrupo"];
-            //Retorna o valor encontrado.
 
          }
          catch (Exception erro)
@@ -111,7 +105,7 @@ namespace Funcoes
          }
          return codigo;
       }
-
+      //=========================================================
       public static int BuscaCodigoPeriodo(string periodo)
       {
          var cmd = new OleDbCommand("SELECT * FROM tblPeriodos WHERE descricaoPeriodo = @periodo");
@@ -119,7 +113,7 @@ namespace Funcoes
          cmd.Parameters.AddWithValue("@periodo", periodo);
 
          cmd.Connection = Conexao.connection;
-         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         
          Conexao.Conectar();
 
          int codigo = 0;
@@ -129,9 +123,8 @@ namespace Funcoes
             var reader = cmd.ExecuteReader();
 
             reader.Read();
-            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            
             codigo = (int)reader["codPeriodo"];
-            //Retorna o valor encontrado.
 
          }
          catch (Exception erro)
@@ -144,7 +137,7 @@ namespace Funcoes
          }
          return codigo;
       }
-
+      //=========================================================
       public static int BuscaCodigoAtividade(string atividade)
       {
          var cmd = new OleDbCommand("SELECT * FROM tblAtividades WHERE descricaoAtividade = @atividade");
@@ -152,7 +145,7 @@ namespace Funcoes
          cmd.Parameters.AddWithValue("@atividade", atividade);
 
          cmd.Connection = Conexao.connection;
-         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         
          Conexao.Conectar();
 
          int codigo = 0;
@@ -162,7 +155,7 @@ namespace Funcoes
             var reader = cmd.ExecuteReader();
 
             reader.Read();
-            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            
             codigo = (int)reader["codAtividade"];
 
          }
@@ -176,6 +169,7 @@ namespace Funcoes
          }
          return codigo;
       }
+      //=========================================================
       public static int BuscaCodigoAluno(string matricula)
       {
          var cmd = new OleDbCommand("SELECT * FROM tblAlunos WHERE matricula = @matricula");
@@ -183,7 +177,7 @@ namespace Funcoes
          cmd.Parameters.AddWithValue("@matricula", matricula);
 
          cmd.Connection = Conexao.connection;
-         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         
          Conexao.Conectar();
 
          int codigo = 0;
@@ -193,7 +187,7 @@ namespace Funcoes
             var reader = cmd.ExecuteReader();
 
             reader.Read();
-            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            
             codigo = (int)reader["codAluno"];
          }
          catch (Exception erro)
@@ -206,6 +200,8 @@ namespace Funcoes
          }
          return codigo;
       }
+      //================= Métodos de conversão ==================
+      //=========================================================
       public static string ConverteCurso(int curso)
       {
          var cmd = new OleDbCommand("SELECT * FROM tblCursos WHERE codCurso = @curso");
@@ -213,7 +209,7 @@ namespace Funcoes
          cmd.Parameters.AddWithValue("@curso", curso);
 
          cmd.Connection = Conexao.connection;
-         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         
          Conexao.Conectar();
 
          string descricao = "";
@@ -223,9 +219,8 @@ namespace Funcoes
             var reader = cmd.ExecuteReader();
 
             reader.Read();
-            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            
             descricao = reader["descricaoCurso"].ToString();
-            //Retorna o valor encontrado.
 
          }
          catch (Exception erro)
@@ -238,6 +233,7 @@ namespace Funcoes
          }
          return descricao;
       }
+      //=========================================================
       public static string ConverteTurma(int anoTurma)
       {
          var cmd = new OleDbCommand("SELECT * FROM tblAnoTurmas WHERE codTurma = @turma");
@@ -245,7 +241,7 @@ namespace Funcoes
          cmd.Parameters.AddWithValue("@turma", anoTurma);
 
          cmd.Connection = Conexao.connection;
-         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         
          Conexao.Conectar();
 
          string descricao = "";
@@ -255,9 +251,8 @@ namespace Funcoes
             var reader = cmd.ExecuteReader();
 
             reader.Read();
-            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            
             descricao = reader["anoTurma"].ToString();
-            //Retorna o valor encontrado.
 
          }
          catch (Exception erro)
@@ -270,6 +265,7 @@ namespace Funcoes
          }
          return descricao;
       }
+      //=========================================================
       public static string ConverteGrupo(int grupo)
       {
          var cmd = new OleDbCommand("SELECT * FROM tblGrupos WHERE codGrupo = @grupo");
@@ -277,7 +273,7 @@ namespace Funcoes
          cmd.Parameters.AddWithValue("@grupo", grupo);
 
          cmd.Connection = Conexao.connection;
-         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         
          Conexao.Conectar();
 
          string descricao = "";
@@ -287,7 +283,7 @@ namespace Funcoes
             var reader = cmd.ExecuteReader();
 
             reader.Read();
-            //Armazena o valor encontrado pelo cmd dentro da variavel.
+           
             descricao = reader["descricaoGrupo"].ToString();
 
          }
@@ -299,9 +295,10 @@ namespace Funcoes
          {
             Conexao.Desconectar();
          }
-         //Retorna o valor encontrado.
+         
          return descricao;
       }
+      //=========================================================
       public static string ConverteAtividade(int atividade)
       {
          var cmd = new OleDbCommand("SELECT * FROM tblAtividades WHERE codAtividade = @atividade");
@@ -309,7 +306,7 @@ namespace Funcoes
          cmd.Parameters.AddWithValue("@atividade", atividade);
 
          cmd.Connection = Conexao.connection;
-         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         
          Conexao.Conectar();
 
          string descricao = "";
@@ -319,7 +316,7 @@ namespace Funcoes
             var reader = cmd.ExecuteReader();
 
             reader.Read();
-            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            
             descricao = reader["descricaoAtividade"].ToString();
 
          }
@@ -331,9 +328,10 @@ namespace Funcoes
          {
             Conexao.Desconectar();
          }
-         //Retorna o valor encontrado.
+         
          return descricao;
       }
+      //=========================================================
       public static string ConverteAluno(int aluno)
       {
          var cmd = new OleDbCommand("SELECT * FROM tblAlunos WHERE codAluno = @aluno");
@@ -341,7 +339,7 @@ namespace Funcoes
          cmd.Parameters.AddWithValue("@aluno", aluno);
 
          cmd.Connection = Conexao.connection;
-         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         
          Conexao.Conectar();
 
          string descricao = "";
@@ -351,7 +349,7 @@ namespace Funcoes
             var reader = cmd.ExecuteReader();
 
             reader.Read();
-            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            
             descricao = reader["nome"].ToString();
 
          }
@@ -363,9 +361,10 @@ namespace Funcoes
          {
             Conexao.Desconectar();
          }
-         //Retorna o valor encontrado.
+         
          return descricao;
       }
+      //=========================================================
       public static string ConvertePeriodo(int periodo)
       {
          var cmd = new OleDbCommand("SELECT * FROM tblPeriodos WHERE codPeriodo = @periodo");
@@ -373,7 +372,7 @@ namespace Funcoes
          cmd.Parameters.AddWithValue("@periodo", periodo);
 
          cmd.Connection = Conexao.connection;
-         //Chama o método de conexão que está dentro da classe 'Conexao'.
+         
          Conexao.Conectar();
 
          string descricao = "";
@@ -383,7 +382,7 @@ namespace Funcoes
             var reader = cmd.ExecuteReader();
 
             reader.Read();
-            //Armazena o valor encontrado pelo cmd dentro da variavel.
+            
             descricao = reader["descricaoPeriodo"].ToString();
 
          }
@@ -395,15 +394,11 @@ namespace Funcoes
          {
             Conexao.Desconectar();
          }
-         //Retorna o valor encontrado.
+         
          return descricao;
       }
-
-
-      /// <summary>
-      /// Método que recupera os dados da tabela no banco de dados e armazena em um DataTable.
-      /// </summary>
-      /// <returns></returns>
+      //============ Métodos que preenchem combobox =============
+      //=========================================================
       public static DataTable PreencheComboBoxCurso()
       {
          var cmd = new OleDbCommand("SELECT * FROM tblCursos");
@@ -413,15 +408,16 @@ namespace Funcoes
          Conexao.Conectar();
 
          var reader = cmd.ExecuteReader();
-         //Insância um novo DataTable.
+         
          DataTable dt = new DataTable();
-         //Preenche o dt com os dados do reader.
+         
          dt.Load(reader);
 
          Conexao.Desconectar();
-         //Retorna os valores encontrados.
+         
          return dt;
       }
+      //=========================================================
       public static DataTable PreencheComboBoxTurma()
       {
          var cmd = new OleDbCommand("SELECT * FROM tblAnoTurmas");
@@ -440,6 +436,7 @@ namespace Funcoes
 
          return dt;
       }
+      //=========================================================
       public static DataTable PreencheComboBoxGrupo()
       {
          var cmd = new OleDbCommand("SELECT * FROM tblGrupos");
@@ -458,6 +455,7 @@ namespace Funcoes
 
          return dt;
       }
+      //=========================================================
       public static DataTable PreencheComboBoxPeriodo()
       {
          var cmd = new OleDbCommand("SELECT * FROM tblPeriodos");
@@ -476,6 +474,7 @@ namespace Funcoes
 
          return dt;
       }
+      //=========================================================
       public static DataTable PreencheComboBoxAtividade()
       {
          var cmd = new OleDbCommand("SELECT * FROM tblAtividades");

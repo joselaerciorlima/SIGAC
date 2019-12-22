@@ -47,30 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Conexao.cs" />
-    <Compile Include="frmCadAluno2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCadAluno2.Designer.cs">
-      <DependentUpon>frmCadAluno2.cs</DependentUpon>
-    </Compile>
+    <Compile Include="CRUD\Excluir.cs" />
+    <Compile Include="DataBase\Conexao.cs" />
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMenu.designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form3.designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmCadAtividade.cs">
       <SubType>Form</SubType>
@@ -120,7 +103,7 @@
     <Compile Include="Forms\frmConsultaCurso.Designer.cs">
       <DependentUpon>frmConsultaCurso.cs</DependentUpon>
     </Compile>
-    <Compile Include="Funcoes\Atualizar.cs" />
+    <Compile Include="CRUD\Atualizar.cs" />
     <Compile Include="Funcoes\ImprimirDocumento.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -137,7 +120,7 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Funcoes\Cadastrar.cs" />
+    <Compile Include="CRUD\Cadastrar.cs" />
     <Compile Include="Funcoes\Ferramentas.cs" />
     <Compile Include="frmRelCargaHorariaAluno.cs">
       <SubType>Form</SubType>
@@ -163,7 +146,7 @@
     <Compile Include="frmVisualizar.Designer.cs">
       <DependentUpon>frmVisualizar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Funcoes\Localizar.cs" />
+    <Compile Include="CRUD\Localizar.cs" />
     <Compile Include="Modelo\frmModelo2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,17 +161,8 @@
     <Compile Include="Forms\frmRelatorio.Designer.cs">
       <DependentUpon>frmRelatorio.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmCadAluno2.resx">
-      <DependentUpon>frmCadAluno2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCadAtividade.resx">
       <DependentUpon>frmCadAtividade.cs</DependentUpon>
@@ -262,12 +236,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Icones\icons8-cancelar-32.png" />
+    <Content Include="Icones\icons8-cancelar-arquivo-32.png" />
     <Content Include="Icones\icons8-editar-arquivo-32.png" />
     <Content Include="Icones\icons8-excluir-32.png" />
+    <Content Include="Icones\icons8-filtro-32.png" />
     <Content Include="Icones\icons8-novo-arquivo-32.png" />
     <Content Include="Icones\icons8-pesquisar-32.png" />
     <Content Include="Icones\icons8-salvar-32.png" />
+    <Content Include="Icones\icons8-visualizar-arquivo-32.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

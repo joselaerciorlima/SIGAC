@@ -1,6 +1,6 @@
-﻿using Classes;
+﻿using CRUD;
+using DataBase;
 using System;
-using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace UI
@@ -11,36 +11,17 @@ namespace UI
       {
          InitializeComponent();
       }
-      public string codigo = "";
-      public string descricao = "", matricula = "", data = "";
-      public string carga ="";
-      public int atividade = 0, codAluno = 0;
-
+      public string descricao = "", matricula = "", data = "", codigo = "", carga = "", codAluno = "";
+      public int atividade = 0, i = 0;
 
       private void btnLocalizar_Click(object sender, EventArgs e)
       {
-         string comando = "";
-         if (txbFiltro.Text != "")
-         {
-            comando = "SELECT * FROM tblCertificados WHERE matricula LIKE '" + txbFiltro.Text + "%'";
-         }
-         else
-         {
-            comando = "SELECT * FROM tblCertificados";
-         }
+         var reader = Localizar.PesquisarCertificado(txbFiltro.Text);
 
-         var cmd = new OleDbCommand(comando);
-
-         cmd.Connection = Conexao.connection;
-
-         Conexao.Conectar();
+         dgvDados.Rows.Clear();
 
          try
          {
-            var reader = cmd.ExecuteReader();
-            int i = 0;
-            dgvDados.Rows.Clear();
-
             while (reader.Read())
             {
                dgvDados.Rows.Add();
@@ -59,12 +40,10 @@ namespace UI
          finally
          { Conexao.Desconectar(); }
       }
-      
       private void frmConsultaAluno_Load(object sender, EventArgs e)
       {
          btnLocalizar_Click(sender, e);
       }
-
       private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
       {
          if (e.RowIndex >= 0)
@@ -74,10 +53,9 @@ namespace UI
             data = dgvDados.Rows[e.RowIndex].Cells[2].Value.ToString();
             atividade = (int)dgvDados.Rows[e.RowIndex].Cells[3].Value;
             carga = dgvDados.Rows[e.RowIndex].Cells[4].Value.ToString();
-            codAluno = (int)dgvDados.Rows[e.RowIndex].Cells[5].Value;
+            codAluno = dgvDados.Rows[e.RowIndex].Cells[5].Value.ToString();
             codigo = dgvDados.Rows[e.RowIndex].Cells[6].Value.ToString();
             Close();
-
          }
       }
    }

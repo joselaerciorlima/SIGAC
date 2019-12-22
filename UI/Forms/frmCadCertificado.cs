@@ -1,8 +1,9 @@
-﻿using Classes;
-using Funcoes;
+﻿using DataBase;
+using CRUD;
 using System;
 using System.Data.OleDb;
 using System.Windows.Forms;
+using Funcoes;
 
 namespace UI
 {
@@ -12,6 +13,7 @@ namespace UI
       {
          InitializeComponent();
       }
+      //=========================================================
       public void LimpaTela()
       {
          txbCodCertificado.Clear();
@@ -22,6 +24,7 @@ namespace UI
          txbData.Clear();
          cobClassificacao.SelectedIndex = 0;
       }
+      //=========================================================
       private void frmCadAtividade_Load(object sender, EventArgs e)
       {
          alteraBotoes(1);
@@ -29,18 +32,19 @@ namespace UI
          cobClassificacao.DisplayMember = "descricaoAtividade";
          cobClassificacao.DataSource = Ferramentas.PreencheComboBoxAtividade();
       }
+      //=========================================================
       private void btnNovo_Click(object sender, EventArgs e)
       {
          operacao = "novo";
          alteraBotoes(2);
       }
-
+      //=========================================================
       private void btnCancelar_Click(object sender, EventArgs e)
       {
          LimpaTela();
          alteraBotoes(1);
       }
-
+      //=========================================================
       private void btnLocalizar_Click(object sender, EventArgs e)
       {
          var form = new frmConsultaCertificado();
@@ -50,7 +54,7 @@ namespace UI
          {
             string atividade = Ferramentas.ConverteAtividade(form.atividade);
 
-            string aluno = Ferramentas.ConverteAluno(form.codAluno);
+            string aluno = Ferramentas.ConverteAluno(Convert.ToInt32(form.codAluno));
 
             txbCodCertificado.Text = form.codigo;
             txbMatricula.Text = form.matricula;
@@ -72,50 +76,33 @@ namespace UI
          }
          form.Dispose();
       }
-
+      //=========================================================
       private void btnEditar_Click(object sender, EventArgs e)
       {
          operacao = "alterar";
          alteraBotoes(2);
          txbMatricula.Enabled = false;
       }
-
+      //=========================================================
       private void btnExcluir_Click(object sender, EventArgs e)
       {
-         try
+
+         DialogResult d = MessageBox.Show("Deseja excluir o registro?", "Aviso", MessageBoxButtons.YesNo);
+         if (d.ToString() == "Yes")
          {
-            DialogResult d = MessageBox.Show("Deseja excluir o registro?", "Aviso", MessageBoxButtons.YesNo);
-            if (d.ToString() == "Yes")
-            {
-               var cmd = new OleDbCommand("DELETE FROM tblCertificados WHERE codCertificado = @codigo");
 
-               cmd.Parameters.AddWithValue("@codigo", txbCodCertificado.Text);
+            var excluir = new Excluir(txbCodCertificado.Text, txbCodCertificado);
 
-               cmd.Connection = Conexao.connection;
+            LimpaTela();
+            alteraBotoes(1);
 
-               Conexao.Conectar();
-               cmd.ExecuteNonQuery();
-               LimpaTela();
-               alteraBotoes(1);
-
-            }
-         }
-         catch
-         {
-            MessageBox.Show("Impossivel excluir o registro. \n O registro está sendo utilizado em outro local.");
-            alteraBotoes(3);
-         }
-         finally
-         {
-            Conexao.Desconectar();
          }
       }
-
+      //=========================================================
       private void btnSalvar_Click(object sender, EventArgs e)
       {
          if (operacao == "novo")
          {
-            //Busca o método que está dentro da classe 'Ferramentas' e passa o parametro com a combobox.
             int classificacao = Ferramentas.BuscaCodigoAtividade(cobClassificacao.Text);
 
             string data = DateTime.Today.ToString();
@@ -130,8 +117,6 @@ namespace UI
 
             int classificacao = Ferramentas.BuscaCodigoAtividade(cobClassificacao.Text);
 
-            //int codAluno = Ferramentas.BuscaCodigoAluno(txbMatricula.Text);
-
             var data = DateTime.Now.ToString();
 
             var certificado = new Atualizar(txbCodCertificado.Text, txbMatricula.Text, txbCodAluno.Text, txbDescricao.Text, txbCargaHoraria.Text, txbData.Text, classificacao, data);
@@ -140,7 +125,7 @@ namespace UI
             alteraBotoes(1);
          }
       }
-
+      //=========================================================
       private void btnPesquisarAluno_Click(object sender, EventArgs e)
       {
          var form = new frmConsultaAluno();
@@ -163,6 +148,7 @@ namespace UI
 
          form.Dispose();
       }
+      //=========================================================
       private void btnFecharForm_Click(object sender, EventArgs e)
       {
          Close();

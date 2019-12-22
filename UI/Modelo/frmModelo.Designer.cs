@@ -31,13 +31,13 @@
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModelo));
          this.panel1 = new System.Windows.Forms.Panel();
          this.btnNovo = new System.Windows.Forms.Button();
+         this.btnFecharForm = new System.Windows.Forms.Button();
          this.btnCancelar = new System.Windows.Forms.Button();
          this.btnLocalizar = new System.Windows.Forms.Button();
          this.btnSalvar = new System.Windows.Forms.Button();
          this.btnEditar = new System.Windows.Forms.Button();
          this.btnExcluir = new System.Windows.Forms.Button();
          this.pnDados = new System.Windows.Forms.Panel();
-         this.btnFecharForm = new System.Windows.Forms.Button();
          this.panel1.SuspendLayout();
          this.SuspendLayout();
          // 
@@ -54,7 +54,7 @@
          this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
          this.panel1.Location = new System.Drawing.Point(0, 0);
          this.panel1.Name = "panel1";
-         this.panel1.Size = new System.Drawing.Size(784, 63);
+         this.panel1.Size = new System.Drawing.Size(800, 63);
          this.panel1.TabIndex = 0;
          // 
          // btnNovo
@@ -74,6 +74,24 @@
          this.btnNovo.Text = "Novo";
          this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
          this.btnNovo.UseVisualStyleBackColor = true;
+         // 
+         // btnFecharForm
+         // 
+         this.btnFecharForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+         this.btnFecharForm.FlatAppearance.BorderSize = 0;
+         this.btnFecharForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+         this.btnFecharForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+         this.btnFecharForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+         this.btnFecharForm.Font = new System.Drawing.Font("Consolas", 12F);
+         this.btnFecharForm.Image = ((System.Drawing.Image)(resources.GetObject("btnFecharForm.Image")));
+         this.btnFecharForm.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+         this.btnFecharForm.Location = new System.Drawing.Point(754, 3);
+         this.btnFecharForm.Margin = new System.Windows.Forms.Padding(0, 1, 0, 2);
+         this.btnFecharForm.Name = "btnFecharForm";
+         this.btnFecharForm.Size = new System.Drawing.Size(37, 40);
+         this.btnFecharForm.TabIndex = 0;
+         this.btnFecharForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+         this.btnFecharForm.UseVisualStyleBackColor = true;
          // 
          // btnCancelar
          // 
@@ -171,33 +189,14 @@
          this.pnDados.Dock = System.Windows.Forms.DockStyle.Fill;
          this.pnDados.Location = new System.Drawing.Point(0, 63);
          this.pnDados.Name = "pnDados";
-         this.pnDados.Size = new System.Drawing.Size(784, 498);
+         this.pnDados.Size = new System.Drawing.Size(800, 537);
          this.pnDados.TabIndex = 2;
-         // 
-         // btnFecharForm
-         // 
-         this.btnFecharForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-         this.btnFecharForm.FlatAppearance.BorderSize = 0;
-         this.btnFecharForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-         this.btnFecharForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-         this.btnFecharForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-         this.btnFecharForm.Font = new System.Drawing.Font("Consolas", 12F);
-         this.btnFecharForm.Image = ((System.Drawing.Image)(resources.GetObject("btnFecharForm.Image")));
-         this.btnFecharForm.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-         this.btnFecharForm.Location = new System.Drawing.Point(709, 3);
-         this.btnFecharForm.Margin = new System.Windows.Forms.Padding(0, 1, 0, 2);
-         this.btnFecharForm.Name = "btnFecharForm";
-         this.btnFecharForm.Size = new System.Drawing.Size(71, 58);
-         this.btnFecharForm.TabIndex = 0;
-         this.btnFecharForm.Text = "Fechar";
-         this.btnFecharForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-         this.btnFecharForm.UseVisualStyleBackColor = true;
          // 
          // frmModelo
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size(784, 561);
+         this.ClientSize = new System.Drawing.Size(800, 600);
          this.Controls.Add(this.pnDados);
          this.Controls.Add(this.panel1);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -214,7 +213,6 @@
         #endregion
 
         protected System.Windows.Forms.Panel panel1;
-        protected System.Windows.Forms.Panel pnDados;
         protected System.Windows.Forms.Button btnNovo;
         protected System.Windows.Forms.Button btnCancelar;
         protected System.Windows.Forms.Button btnLocalizar;
@@ -222,5 +220,6 @@
         protected System.Windows.Forms.Button btnEditar;
         protected System.Windows.Forms.Button btnExcluir;
         protected System.Windows.Forms.Button btnFecharForm;
+        protected System.Windows.Forms.Panel pnDados;
     }
 }

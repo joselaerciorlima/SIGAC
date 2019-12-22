@@ -1,6 +1,6 @@
-﻿using Classes;
+﻿using DataBase;
+using CRUD;
 using System;
-using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace UI
@@ -11,35 +11,17 @@ namespace UI
       {
          InitializeComponent();
       }
-      public string codigo = "";
-      public string descricao = "";
-      public string cargaHoraria = "";
-      public int grupo = 0;
+      public string descricao = "", codigo = "", cargaHoraria = "";
+      public int grupo = 0, i = 0;
 
       private void btnLocalizar_Click(object sender, EventArgs e)
       {
-         string comando = "";
-         if (txbFiltro.Text != "")
-         {
-            comando = "SELECT * FROM tblAtividades WHERE descricaoAtividade LIKE '" + txbFiltro.Text + "%'";
-         }
-         else
-         {
-            comando = "SELECT * FROM tblAtividades";
-         }
+         var reader = Localizar.PesquisarAtividade(txbFiltro.Text);
 
-         var cmd = new OleDbCommand(comando);
-
-         cmd.Connection = Conexao.connection;
-
-         Conexao.Conectar();
+         dgvDados.Rows.Clear();
 
          try
          {
-            var reader = cmd.ExecuteReader();
-            int i = 0;
-            dgvDados.Rows.Clear();
-
             while (reader.Read())
             {
                dgvDados.Rows.Add();
@@ -59,7 +41,6 @@ namespace UI
       {
          btnLocalizar_Click(sender, e);
       }
-
       private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
       {
          if (e.RowIndex >= 0)

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 
-namespace Classes
+namespace Funcoes
 {
    public static class ThemeColor
    {

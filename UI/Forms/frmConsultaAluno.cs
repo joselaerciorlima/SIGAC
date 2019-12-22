@@ -1,7 +1,7 @@
-﻿using Classes;
+﻿using DataBase;
 using System;
-using System.Data.OleDb;
 using System.Windows.Forms;
+using CRUD;
 
 namespace UI
 {
@@ -11,39 +11,17 @@ namespace UI
       {
          InitializeComponent();
       }
-      public string codigo = "";
-      public string nome = "", matricula = "";
-      public int curso = 0;
-      public int turma = 0;
+      public string codigo = "", nome = "", matricula = "";
+      public int curso = 0, turma = 0, i = 0;
 
-        private void btnLocalizar_Click(object sender, EventArgs e)
-        {
-         string comando = "";
-         if (rbMatricula.Checked == true)
-         {
-            comando = "SELECT * FROM tblAlunos WHERE matricula LIKE '" + txbFiltro.Text + "%'";
-         }
-         else if (rbNome.Checked == true)
-         {
-            comando = "SELECT * FROM tblAlunos WHERE nome LIKE '" + txbFiltro.Text + "%'";
-         }
-         else
-         {
-            comando = "SELECT * FROM tblAlunos";
-         }
+      private void btnLocalizar_Click(object sender, EventArgs e)
+      {
+         var reader = Localizar.PesquisarAluno(txbFiltro.Text, rbMatricula, rbNome);
 
-         var cmd = new OleDbCommand(comando);
-
-         cmd.Connection = Conexao.connection;
-
-         Conexao.Conectar();
+         dgvDados.Rows.Clear();
 
          try
          {
-            var reader = cmd.ExecuteReader();
-            int i = 0;
-            dgvDados.Rows.Clear();
-
             while (reader.Read())
             {
                dgvDados.Rows.Add();
@@ -60,24 +38,20 @@ namespace UI
          finally
          { Conexao.Desconectar(); }
       }
-
       private void rbMatricula_CheckedChanged(object sender, EventArgs e)
       {
          txbFiltro.Clear();
          btnLocalizar_Click(sender, e);
       }
-
       private void rbNome_CheckedChanged(object sender, EventArgs e)
       {
          txbFiltro.Clear();
          btnLocalizar_Click(sender, e);
       }
-
       private void frmConsultaAluno_Load(object sender, EventArgs e)
       {
          btnLocalizar_Click(sender, e);
       }
-
       private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
       {
          if (e.RowIndex >= 0)
@@ -90,5 +64,5 @@ namespace UI
             Close();
          }
       }
-    }
+   }
 }

@@ -42,9 +42,6 @@ C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementa
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\SIGAC v2.0\UI\obj\Debug\UI.csproj.GenerateResource.cache
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\SIGAC v2.0\UI\obj\Debug\UI.exe
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\SIGAC v2.0\UI\obj\Debug\UI.pdb
-C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\SIGAC v2.0\UI\obj\Debug\UI.Form2.resources
-C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\SIGAC v2.0\UI\obj\Debug\UI.Form3.resources
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\SIGAC v2.0\UI\obj\Debug\Modelo.frmModelo2.resources
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\SIGAC v2.0\UI\obj\Debug\UI.frmMenu.resources
 C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\SIGAC v2.0\UI\obj\Debug\UI.csprojAssemblyReference.cache
-C:\Users\josel\OneDrive\ProjetosTI\Projetos pessoais\Unifafibe\Horas complementares\SIGAC v2.0\UI\obj\Debug\UI.frmCadAluno2.resources

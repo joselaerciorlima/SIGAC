@@ -1,7 +1,7 @@
 ﻿using System.Data.OleDb;
 using System.Configuration;
 
-namespace Classes
+namespace DataBase
 {
    public class Conexao
    {
